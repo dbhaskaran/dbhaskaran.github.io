@@ -1,0 +1,14 @@
+body {
+  background-color: #e3f2fd;
+}
+.navbar {
+  background-color: #89BADD;
+}
+.jumbotron {
+  background-color: #FFFFFF !important;
+  text-align: center;
+  }
+.img-circle {
+  border-radius: 50%;
+  width:100px;height:100px;
+  }
