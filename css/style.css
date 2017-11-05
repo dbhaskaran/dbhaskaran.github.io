@@ -12,3 +12,15 @@ body {
   border-radius: 50%;
   width:100px;height:100px;
   }
+.fa-linkedin-square:hover {
+  color: #0077B5;
+}
+.fa-youtube-square:hover {
+  color: #cc181e;
+}
+.fa-twitter-square:hover {
+  color: #00aced;
+}
+.fa-github-square:hover {
+  color: #6e5494;
+}
