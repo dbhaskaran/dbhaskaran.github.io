@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+ <meta content="utf-8" http-equiv="encoding">
+ <link rel="icon" type="image/png" href="./img/favicon.ico">
+ <title>Deepak Bhaskaran</title>
+ <title>Cal-Heatmap Samples</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+    <script type="text/javascript" src="http://cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.min.js"></script>
+    <link rel="stylesheet" href="http://cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.css" />
+ <link rel="stylesheet" href="./css/style.css">
+ <script type="text/javascript" src="./js/action.js" ></script>
+</head>
+<body>
+ <nav class="navbar navbar-light">
+ <div class="container-fluid">
+   <div class="navbar-header">
+     <a class="navbar-brand" href="https://www.linkedin.com/in/dbhaskaran/"><b>Deepak Bhaskaran</b></a>
+   </div>
+   <ul class="nav navbar-nav navbar-right">
+     <li><a href="https://dbhaskaran.github.io">Home</a></li>
+     <li><a href="./projects.html">Projects</a></li>
+     <li><a href="./courses.html">Courses</a></li>
+     <li><a href="./reading.html">Reading List</a></li>
+     <li><a href="./travel.html">Travel</a></li>
+   </ul>
+ </div>
+</nav>
+<div class="jumbotron">
+  <img class="img-circle" src="https://scontent-ort2-1.cdninstagram.com/t51.2885-15/e35/22711009_1977997239080448_1166455251499220992_n.jpg">
+  <h4>“A man must not only have faith but intellectual faith too. To make a man take up everything and believe it, would be to make him a lunatic.”</h4>
+<br/><b>― Swami Vivekananda</b>
+</div>
+<div class="container">
+        <div id="cal-heatmap"></div>
+
+        <script type="text/javascript">
+            var cal = new CalHeatMap();
+            cal.init({
+                domain: "year",
+                subDomain: "day",
+                cellSize: 20,
+                itemName: ["date", "task"],
+                data: {
+                    "1509932086": 10,
+                    "1509962086": 40
+                },
+                subDomainTextFormat: "%d",
+                range: 1,
+                displayLegend: false,
+                domainMargin: [0, 0, 0, 0],
+                animationDuration: 800,
+                domainDynamicDimension: false,
+                start: new Date(2017, 01, 01),
+                end: new Date(2018, 12, 26),
+                scale: [10, 20, 30, 40, 50],
+            });
+        </script>
+</body>
+</html>
