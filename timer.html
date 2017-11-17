@@ -12,10 +12,11 @@
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
  <!-- Latest compiled JavaScript -->
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
  <link rel="stylesheet" href="./css/style.css">
  <script type="text/javascript" src="./js/action.js" ></script>
 </head>
-<body>
+<body ng-app="timerApp">
  <nav class="navbar navbar-light">
  <div class="container-fluid">
    <div class="navbar-header">
@@ -36,7 +37,13 @@
 <br/><b>― Karen Lamb</b>
 </div>
 <div class="container">
-Timer Here
+   <!--counterCtrl App Controller -->
+  <div ng-controller="counterCtrl">
+   <!--Angular Binding -->
+  <p ng-bind="counter"></p>
+      <button type="button" class="btn btn-success" ng-click="countdown()">Start</button>
+      <button type="button" class="btn btn-danger" ng-click="stop()">Stop</button>
+  </div>
 </div>
 </body>
 </html>
