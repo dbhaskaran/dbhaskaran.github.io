@@ -3,7 +3,7 @@ body {
 }
 .navbar {
   background-color: #89BADD;
-  border-bottom-color:#e3f2fd;
+  margin-bottom: 0px;
 }
 .jumbotron {
   background-color: #e3f2fd !important;
