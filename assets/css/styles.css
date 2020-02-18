@@ -118,7 +118,7 @@ a.dotted-link:hover {
 /* ======= Header ======= */
 .header {
   padding: 30px 0;
-  background: #f5f5f5;
+  background-image: url("../../assets/images/hawaii.png");
   border-top: 10px solid #778492;
 }
 
