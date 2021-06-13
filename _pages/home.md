@@ -3,10 +3,25 @@ title: "Deepak Bhaskaran - Home"
 layout: homelay
 excerpt: "Deepak Bhaskaran"
 sitemap: false
+customjs:
+ - https://platform.linkedin.com/badges/js/profile.js
 permalink: /
 ---
+<!-- Custom JavaScript files set in YAML front matter -->
+{% for js in page.customjs %}
+<script async type="text/javascript" src="{{ js }}"></script>
+{% endfor %}
 
-Hello world!
+## Deepak Bhaskaran
+Software Engineer
+🌉 San Francisco, CA
+
+Email: b<my_first_name>23@gmail.com
+<!-- Custom JavaScript files set in YAML front matter -->
+{% for js in page.customjs %}
+<script async type="text/javascript" src="{{ js }}"></script>
+{% endfor %}
+
 
 To this end, we develop novel spectroscopic-imaging scanning tunneling microscopy (SI-STM) tools to visualize the relevant quantum mechanical degrees of freedom. We want to be able to build the perfect instruments to answer the  scientific questions we deem most important (see [Research](research)).
 
