@@ -5,10 +5,7 @@ excerpt: "Deepak Bhaskaran"
 sitemap: false
 permalink: /
 ---
-<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
-
 # Deepak Bhaskaran  
-<div class="badge-base LI-profile-badge" data-locale="en_US" align="right" data-size="medium" data-theme="light" data-type="HORIZONTAL" data-vanity="dbhaskaran" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://www.linkedin.com/in/dbhaskaran?trk=profile-badge">Deepak Bhaskaran</a></div>
 Software Engineer
 🌉 San Francisco, CA
 
