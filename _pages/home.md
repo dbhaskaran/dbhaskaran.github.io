@@ -5,8 +5,20 @@ excerpt: "Deepak Bhaskaran"
 sitemap: false
 permalink: /
 ---
+# Deepak Bhaskaran  
+Software Engineer
+🌉 San Francisco, CA
 
-Hello world!
+Email: b[my_first_name]23@gmail.com <br>
+LinkedIn: [dbhaskaran](https://www.linkedin.com/in/dbhaskaran/)
+
+<br>
+<br>
+## <b>About Me</b>
+<hr width="850px">
+<hr style="height:10pt; visibility:hidden;" />
+
+              
 
 To this end, we develop novel spectroscopic-imaging scanning tunneling microscopy (SI-STM) tools to visualize the relevant quantum mechanical degrees of freedom. We want to be able to build the perfect instruments to answer the  scientific questions we deem most important (see [Research](research)).
 
