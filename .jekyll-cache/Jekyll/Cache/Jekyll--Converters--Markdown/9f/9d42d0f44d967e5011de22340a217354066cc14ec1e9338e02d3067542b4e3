@@ -1,5 +1,0 @@
-I"É<h2 id="dumplings">Dumplings</h2>
-<p>
-Today I will review the seminal <b>End-to-End Arguments in System Design</b> paper by J. Saltzer, D. Reed, and D. Clark. Engineering computer systems is all about tradeoffs we need to make to optimize one parameter over the other. This paper discusses a design principle for distributed systems, called the end-to-end argument and gives some examples for real world systems where this design principle is beneficial. The end to end argument states that fault tolerance functions placed at the bottom levels of a system may be of little value when compared with the cost of providing them at that low level. Thus it is better if these functions are placed on the edges. 
-</p>
-:ET
