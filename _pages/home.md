@@ -5,7 +5,7 @@ excerpt: "Deepak Bhaskaran"
 sitemap: false
 permalink: /
 ---
-# Deepak Bhaskaran  
+# Deepak Bhaskaran  <a href="../images/profile3.png" target="_blank"><img src="../images/profile3.png" alt="Deepak Bhaskaran" align="right"></a>
 Software Engineer
 🌉 San Francisco, CA
 
