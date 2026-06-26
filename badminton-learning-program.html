@@ -1,0 +1,1499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Badminton: Complete Beginner to Advanced Player</title>
+    <style>
+        :root {
+            --primary: #1565c0;
+            --primary-light: #1976d2;
+            --accent: #f77f00;
+            --accent-light: #fcbf49;
+            --bg: #f5f7fa;
+            --card-bg: #ffffff;
+            --text: #212529;
+            --text-muted: #6c757d;
+            --border: #dee2e6;
+            --level-beginner: #81d4fa;
+            --level-intermediate: #ffb74d;
+            --level-advanced: #e53935;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .level-scale {
+            background: white;
+            color: var(--text);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem auto;
+            max-width: 700px;
+            text-align: left;
+        }
+
+        .level-scale h3 {
+            margin-bottom: 0.75rem;
+            color: var(--primary);
+        }
+
+        .level-scale ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .level-scale li {
+            padding: 0.3rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .level-scale li:last-child {
+            border-bottom: none;
+        }
+
+        .level-scale .level-num {
+            font-weight: 700;
+            color: var(--primary);
+            display: inline-block;
+            width: 90px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .phase {
+            margin-bottom: 3rem;
+        }
+
+        .phase-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 3px solid var(--primary);
+        }
+
+        .phase-number {
+            background: var(--primary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .phase-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .phase-subtitle {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .phase-duration {
+            margin-left: auto;
+            background: var(--accent-light);
+            color: #333;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .week-block {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            border-left: 4px solid var(--primary-light);
+        }
+
+        .week-block h3 {
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+            font-size: 1.15rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            .phase-header {
+                flex-wrap: wrap;
+            }
+            .phase-duration {
+                margin-left: 0;
+            }
+        }
+
+        .skill-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+
+        .skill-item::before {
+            content: "\2713";
+            color: var(--primary);
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .drill-box {
+            background: #e3f2fd;
+            border: 1px solid #bbdefb;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 0.75rem;
+        }
+
+        .drill-box h4 {
+            color: var(--primary);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .drill-box ul {
+            padding-left: 1.2rem;
+            font-size: 0.9rem;
+        }
+
+        .drill-box li {
+            margin-bottom: 0.3rem;
+        }
+
+        .resources-section {
+            margin-top: 1rem;
+        }
+
+        .resources-section h4 {
+            color: var(--accent);
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .resource-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .resource-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            background: #fff3e0;
+            color: #e65100;
+            padding: 0.35rem 0.7rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+
+        .resource-link:hover {
+            background: #ffe0b2;
+        }
+
+        .resource-link.youtube {
+            background: #fce4ec;
+            color: #c62828;
+        }
+
+        .resource-link.youtube:hover {
+            background: #ffcdd2;
+        }
+
+        .resource-link.tamil {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .resource-link.tamil:hover {
+            background: #c8e6c9;
+        }
+
+        .resource-link.instagram {
+            background: #f3e5f5;
+            color: #6a1b9a;
+        }
+
+        .resource-link.instagram:hover {
+            background: #e1bee7;
+        }
+
+        .icon {
+            font-size: 1rem;
+        }
+
+        .milestone-box {
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            border: 2px solid var(--primary-light);
+            border-radius: 10px;
+            padding: 1.2rem;
+            margin-top: 1rem;
+        }
+
+        .milestone-box h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .milestone-box ul {
+            padding-left: 1.2rem;
+            font-size: 0.9rem;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: var(--border);
+            border-radius: 4px;
+            margin: 1rem 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 0.3s;
+        }
+
+        .equipment-section {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+
+        .equipment-section h2 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .equipment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .equipment-card {
+            background: #e3f2fd;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .equipment-card .emoji {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .equipment-card h4 {
+            font-size: 0.95rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .equipment-card p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .tip-callout {
+            background: #e8eaf6;
+            border-left: 4px solid #3f51b5;
+            border-radius: 0 8px 8px 0;
+            padding: 1rem;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+
+        .tip-callout strong {
+            color: #283593;
+        }
+
+        .channel-directory {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+
+        .channel-directory h2 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .channel-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+
+        .channel-card {
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1rem;
+        }
+
+        .channel-card h4 {
+            font-size: 0.95rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .channel-card .lang-tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            padding: 0.1rem 0.4rem;
+            border-radius: 3px;
+            margin-left: 0.3rem;
+            font-weight: 600;
+        }
+
+        .lang-tag.english {
+            background: #e3f2fd;
+            color: #1565c0;
+        }
+
+        .lang-tag.tamil {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .channel-card p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+
+        .channel-card a {
+            color: var(--primary);
+            font-size: 0.85rem;
+            text-decoration: none;
+        }
+
+        .channel-card a:hover {
+            text-decoration: underline;
+        }
+
+        .weekly-schedule {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+
+        .weekly-schedule h4 {
+            font-size: 0.9rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 0.5rem;
+            font-size: 0.8rem;
+        }
+
+        .schedule-day {
+            background: white;
+            padding: 0.5rem;
+            border-radius: 6px;
+            text-align: center;
+            border: 1px solid var(--border);
+        }
+
+        .schedule-day strong {
+            display: block;
+            color: var(--primary);
+            margin-bottom: 0.2rem;
+        }
+
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        .toc {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+
+        .toc h2 {
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+            font-size: 1.2rem;
+        }
+
+        .toc ol {
+            padding-left: 1.5rem;
+        }
+
+        .toc li {
+            margin-bottom: 0.4rem;
+        }
+
+        .toc a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .toc a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Badminton Learning Program</h1>
+    <p>A structured path from complete beginner to advanced competitive player. Master footwork, strokes, strategy, and match play with free video tutorials in English and Tamil.</p>
+    <div class="level-scale">
+        <h3>Player Level Progression</h3>
+        <ul>
+            <li><span class="level-num">Beginner</span> Learning grip, basic rally, understanding court</li>
+            <li><span class="level-num">Elementary</span> Can sustain rallies, basic clears and drops, understands scoring</li>
+            <li><span class="level-num">Intermediate</span> Consistent footwork, all basic shots, plays singles/doubles</li>
+            <li><span class="level-num">Upper-Int</span> Smash, deception, net play, tactical awareness</li>
+            <li><span class="level-num">Advanced</span> Fast footwork, shot variety, match strategy, tournament ready</li>
+        </ul>
+    </div>
+</header>
+
+<div class="container">
+
+    <div class="toc">
+        <h2>Program Overview</h2>
+        <ol>
+            <li><a href="#phase1">Phase 1: Grip, Stance &amp; Basic Shots (Weeks 1-4)</a></li>
+            <li><a href="#phase2">Phase 2: Footwork &amp; Court Coverage (Weeks 5-8)</a></li>
+            <li><a href="#phase3">Phase 3: Intermediate Strokes &amp; Net Play (Weeks 9-14)</a></li>
+            <li><a href="#phase4">Phase 4: Smash, Defense &amp; Doubles (Weeks 15-20)</a></li>
+            <li><a href="#phase5">Phase 5: Advanced Techniques &amp; Deception (Weeks 21-26)</a></li>
+            <li><a href="#phase6">Phase 6: Match Strategy &amp; Competition (Weeks 27-32)</a></li>
+        </ol>
+    </div>
+
+    <!-- Equipment Section -->
+    <div class="equipment-section">
+        <h2>Essential Equipment</h2>
+        <div class="equipment-grid">
+            <div class="equipment-card">
+                <div class="emoji">&#127992;</div>
+                <h4>Racket</h4>
+                <p>Start with an even-balanced, medium-flex racket (80-90g). Yonex, Li-Ning, or Victor entry-level.</p>
+            </div>
+            <div class="equipment-card">
+                <div class="emoji">&#127744;</div>
+                <h4>Shuttlecocks</h4>
+                <p>Nylon shuttles for practice, feather shuttles for match play. Speed 76-77 for most climates.</p>
+            </div>
+            <div class="equipment-card">
+                <div class="emoji">&#128095;</div>
+                <h4>Court Shoes</h4>
+                <p>Non-marking gum sole with lateral support. Yonex, Asics, or Li-Ning badminton shoes. Never running shoes!</p>
+            </div>
+            <div class="equipment-card">
+                <div class="emoji">&#129526;</div>
+                <h4>Grip Tape</h4>
+                <p>Towel grip for sweat absorption or PU overgrip for tackiness. Replace regularly.</p>
+            </div>
+            <div class="equipment-card">
+                <div class="emoji">&#128085;</div>
+                <h4>Clothing</h4>
+                <p>Lightweight, breathable sportswear. Shorts/skirt with moisture-wicking top.</p>
+            </div>
+            <div class="equipment-card">
+                <div class="emoji">&#127935;</div>
+                <h4>String</h4>
+                <p>Beginners: 20-22 lbs tension. Intermediate: 23-25 lbs. Use BG65 or similar all-round string.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Channel Directory -->
+    <div class="channel-directory">
+        <h2>Recommended Free Tutorial Channels</h2>
+        <div class="channel-list">
+            <div class="channel-card">
+                <h4>Badminton Famly <span class="lang-tag english">EN</span></h4>
+                <p>Comprehensive technique tutorials from professional coaches</p>
+                <a href="https://www.youtube.com/@BadmintonFamly" target="_blank">youtube.com/@BadmintonFamly</a>
+            </div>
+            <div class="channel-card">
+                <h4>Tobias Wadenka <span class="lang-tag english">EN</span></h4>
+                <p>Clear, detailed breakdowns of all shots and footwork</p>
+                <a href="https://www.youtube.com/@TobiasWadenka" target="_blank">youtube.com/@TobiasWadenka</a>
+            </div>
+            <div class="channel-card">
+                <h4>Shuttle Life <span class="lang-tag english">EN</span></h4>
+                <p>Tips, drills, and game analysis for all levels</p>
+                <a href="https://www.youtube.com/@ShuttleLife" target="_blank">youtube.com/@ShuttleLife</a>
+            </div>
+            <div class="channel-card">
+                <h4>Coaching Badminton <span class="lang-tag english">EN</span></h4>
+                <p>Professional coaching drills and techniques</p>
+                <a href="https://www.youtube.com/@CoachingBadminton" target="_blank">youtube.com/@CoachingBadminton</a>
+            </div>
+            <div class="channel-card">
+                <h4>BWF Badminton <span class="lang-tag english">EN</span></h4>
+                <p>Official BWF channel &mdash; pro matches, technique highlights</p>
+                <a href="https://www.youtube.com/@BWFBadminton" target="_blank">youtube.com/@BWFBadminton</a>
+            </div>
+            <div class="channel-card">
+                <h4>Badminton Tamil Tutorials <span class="lang-tag tamil">Tamil</span></h4>
+                <p>Step-by-step badminton coaching in Tamil</p>
+                <a href="https://www.youtube.com/results?search_query=badminton+coaching+tamil+beginners" target="_blank">Search: Badminton Tamil Coaching</a>
+            </div>
+            <div class="channel-card">
+                <h4>Sports Tamil <span class="lang-tag tamil">Tamil</span></h4>
+                <p>Badminton tips, tricks, and match analysis in Tamil</p>
+                <a href="https://www.youtube.com/results?search_query=badminton+tips+tamil+tutorial" target="_blank">Search: Badminton Tips Tamil</a>
+            </div>
+            <div class="channel-card">
+                <h4>@badminton.training (IG) <span class="lang-tag english">EN</span></h4>
+                <p>Quick reels on footwork, shots, and drills</p>
+                <a href="https://www.instagram.com/explore/tags/badmintontraining/" target="_blank">instagram.com #badmintontraining</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- PHASE 1 -->
+    <div class="phase" id="phase1">
+        <div class="phase-header">
+            <div class="phase-number">1</div>
+            <div>
+                <div class="phase-title">Grip, Stance &amp; Basic Shots</div>
+                <div class="phase-subtitle">Goal: Hold racket correctly, rally 10+ shots</div>
+            </div>
+            <div class="phase-duration">Weeks 1-4</div>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress-fill" style="width: 15%; background: var(--level-beginner);"></div>
+        </div>
+
+        <div class="week-block">
+            <h3>Week 1: Grips &amp; Racket Handling</h3>
+            <div class="skills-grid">
+                <div class="skill-item">Forehand grip (V-shape on narrow side, like handshake)</div>
+                <div class="skill-item">Backhand grip (thumb flat on wide side of handle)</div>
+                <div class="skill-item">Grip switching speed (forehand to backhand)</div>
+                <div class="skill-item">Relaxed grip (don't squeeze &mdash; tighten only on impact)</div>
+                <div class="skill-item">Ready position: feet shoulder-width, racket up at chest</div>
+                <div class="skill-item">Racket head awareness: tap shuttle up (juggling)</div>
+            </div>
+            <div class="drill-box">
+                <h4>Drills (30 min, 4x per week)</h4>
+                <ul>
+                    <li>Forehand juggle: tap shuttle upward 50 consecutive times</li>
+                    <li>Backhand juggle: same with backhand grip, 50 consecutive</li>
+                    <li>Alternate: forehand tap, backhand tap, repeat (grip switching)</li>
+                    <li>Edge control: balance shuttle on racket frame, walk across court</li>
+                    <li>Shadow grip switching: no shuttle, just practice changing grip quickly</li>
+                </ul>
+            </div>
+            <div class="resources-section">
+                <h4>Watch These Tutorials:</h4>
+                <div class="resource-links">
+                    <a href="https://www.youtube.com/results?search_query=badminton+forehand+grip+tutorial+beginner" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Forehand Grip</a>
+                    <a href="https://www.youtube.com/results?search_query=badminton+backhand+grip+thumb+technique" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Backhand Grip</a>
+                    <a href="https://www.youtube.com/results?search_query=badminton+famly+grip+basics" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Badminton Famly: Grips</a>
+                    <a href="https://www.youtube.com/results?search_query=பேட்மிண்டன்+பிடிப்பது+எப்படி+grip+tamil" target="_blank" class="resource-link tamil"><span class="icon">&#9654;</span> Grip Basics (Tamil)</a>
+                </div>
+            </div>
+
+            <div class="tip-callout">
+                <strong>Most Important Rule:</strong> NEVER use a panhandle (frying pan) grip! The correct forehand grip has the racket frame perpendicular to the floor when arm hangs naturally. This single correction will determine your entire badminton journey.
+            </div>
+        </div>
+
+        <div class="week-block">
+            <h3>Week 2: Service &amp; Basic Clear</h3>
+            <div class="skills-grid">
+                <div class="skill-item">Low serve (backhand, for doubles &mdash; shuttle barely clears net)</div>
+                <div class="skill-item">High serve (forehand, for singles &mdash; high and deep)</div>
+                <div class="skill-item">Service rules (below 1.15m, diagonal box)</div>
+                <div class="skill-item">Overhead forehand clear (high, deep to back)</div>
+                <div class="skill-item">Hitting point: contact shuttle at highest point</div>
+                <div class="skill-item">Follow through: racket finishes across body</div>
+            </div>
+            <div class="drill-box">
+                <h4>Drills</h4>
+                <ul>
+                    <li>High serve practice: 20 serves, aim for landing in back tramline area</li>
+                    <li>Low serve practice: 20 serves, shuttle should barely clear net tape</li>
+                    <li>Clear rally with partner: both hit high clears back and forth (cooperative)</li>
+                    <li>Shadow clear: practice the overhead swing motion without shuttle (20 reps)</li>
+                    <li>Target practice: place targets at back of court, aim clears at them</li>
+                </ul>
+            </div>
+            <div class="resources-section">
+                <h4>Watch These Tutorials:</h4>
+                <div class="resource-links">
+                    <a href="https://www.youtube.com/results?search_query=badminton+high+serve+technique+beginner" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> High Serve</a>
+                    <a href="https://www.youtube.com/results?search_query=badminton+low+serve+backhand+doubles" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Low Serve</a>
+                    <a href="https://www.youtube.com/results?search_query=badminton+clear+shot+overhead+tutorial" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Overhead Clear</a>
+                    <a href="https://www.youtube.com/results?search_query=badminton+service+rules+explained" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Service Rules</a>
+                    <a href="https://www.youtube.com/results?search_query=பேட்மிண்டன்+சர்வீஸ்+serve+tamil" target="_blank" class="resource-link tamil"><span class="icon">&#9654;</span> Service (Tamil)</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="week-block">
+            <h3>Week 3: Drop Shot &amp; Underarm Shots</h3>
+            <div class="skills-grid">
+                <div class="skill-item">Basic drop shot (overhead, shuttle falls near net)</div>
+                <div class="skill-item">Difference between clear and drop (same preparation)</div>
+                <div class="skill-item">Underarm net shot (lift from near the net)</div>
+                <div class="skill-item">Net lift (high lift to opponent's back court)</div>
+                <div class="skill-item">Forehand underarm technique (lunge forward)</div>
+                <div class="skill-item">Basic rally: clear, drop, lift pattern</div>
+            </div>
+            <div class="drill-box">
+                <h4>Drills</h4>
+                <ul>
+                    <li>Drop shot targets: overhead drop aiming to land within 1m of net</li>
+                    <li>Clear-drop alternating: 10 clears then 10 drops, same swing preparation</li>
+                    <li>Net shot practice: partner feeds to net, you push shuttle just over and down</li>
+                    <li>Rally pattern: Player A clears, Player B drops, Player A lifts, repeat</li>
+                </ul>
+            </div>
+            <div class="resources-section">
+                <h4>Watch These Tutorials:</h4>
+                <div class="resource-links">
+                    <a href="https://www.youtube.com/results?search_query=badminton+drop+shot+technique+beginner" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Drop Shot</a>
+                    <a href="https://www.youtube.com/results?search_query=badminton+net+shot+technique+tutorial" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Net Shot</a>
+                    <a href="https://www.youtube.com/results?search_query=badminton+underarm+lift+technique" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Underarm Lift</a>
+                    <a href="https://www.youtube.com/results?search_query=badminton+clear+vs+drop+shot+difference" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Clear vs. Drop</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="week-block">
+            <h3>Week 4: Backhand Basics &amp; Scoring</h3>
+            <div class="skills-grid">
+                <div class="skill-item">Backhand clear (thumb grip, generate power from wrist)</div>
+                <div class="skill-item">Backhand drop shot</div>
+                <div class="skill-item">Backhand net shot</div>
+                <div class="skill-item">Rally scoring system (to 21 points, best of 3)</div>
+                <div class="skill-item">Singles vs. doubles court boundaries</div>
+                <div class="skill-item">Play a full game with correct scoring</div>
+            </div>
+            <div class="drill-box">
+                <h4>Drills</h4>
+                <ul>
+                    <li>Backhand clear: partner feeds to backhand, you clear high and deep (20 reps)</li>
+                    <li>Backhand net shot: from net, push shuttle tight over net with backhand</li>
+                    <li>Mixed rally: use both forehand and backhand sides freely</li>
+                    <li>Play sets: play to 11 (half game) focusing on using correct grip per shot</li>
+                </ul>
+            </div>
+            <div class="resources-section">
+                <h4>Watch These Tutorials:</h4>
+                <div class="resource-links">
+                    <a href="https://www.youtube.com/results?search_query=badminton+backhand+clear+technique" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Backhand Clear</a>
+                    <a href="https://www.youtube.com/results?search_query=badminton+scoring+rules+explained+2024" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Scoring Rules</a>
+                    <a href="https://www.youtube.com/results?search_query=badminton+singles+doubles+court+lines" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Court Lines Explained</a>
+                    <a href="https://www.youtube.com/results?search_query=பேட்மிண்டன்+backhand+shot+tamil" target="_blank" class="resource-link tamil"><span class="icon">&#9654;</span> Backhand (Tamil)</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="milestone-box">
+            <h4>Phase 1 Milestone Checklist</h4>
+            <ul>
+                <li>Correct forehand and backhand grip (no panhandle!)</li>
+                <li>Can rally 10+ clears without the shuttle hitting the net</li>
+                <li>Serve lands in the correct service box 7/10 times</li>
+                <li>Understand clear, drop, net shot, and lift concepts</li>
+                <li>Can keep score correctly and know court boundaries</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- PHASE 2 -->
+    <div class="phase" id="phase2">
+        <div class="phase-header">
+            <div class="phase-number">2</div>
+            <div>
+                <div class="phase-title">Footwork &amp; Court Coverage</div>
+                <div class="phase-subtitle">Goal: Move efficiently to all 6 corners</div>
+            </div>
+            <div class="phase-duration">Weeks 5-8</div>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress-fill" style="width: 30%; background: var(--level-beginner);"></div>
+        </div>
+
+        <div class="week-block">
+            <h3>Weeks 5-6: Basic Footwork Patterns</h3>
+            <div class="skills-grid">
+                <div class="skill-item">Split step (small jump before opponent hits)</div>
+                <div class="skill-item">Chasse steps (side-to-side shuffle)</div>
+                <div class="skill-item">Lunge to the net (forehand and backhand side)</div>
+                <div class="skill-item">Forehand corner footwork (2-3 steps back)</div>
+                <div class="skill-item">Backhand corner footwork (turn and step)</div>
+                <div class="skill-item">Return to base position after every shot</div>
+                <div class="skill-item">6-corner footwork pattern (star drill)</div>
+                <div class="skill-item">Staying on balls of feet (never flat-footed)</div>
+            </div>
+            <div class="drill-box">
+                <h4>Drills (30-40 min, 4x per week)</h4>
+                <ul>
+                    <li>Shadow footwork: move to all 6 corners without shuttle, 3 sets of 1 minute</li>
+                    <li>Star drill: from center, move to each corner and back (6 points), time yourself</li>
+                    <li>Lunge practice: 20 lunges to net on each side (forehand and backhand)</li>
+                    <li>Chasse drill: side shuffle across court width, 10 reps</li>
+                    <li>Split step timing: partner hits shuttle, you split step and react</li>
+                </ul>
+            </div>
+            <div class="resources-section">
+                <h4>Watch These Tutorials:</h4>
+                <div class="resource-links">
+                    <a href="https://www.youtube.com/results?search_query=badminton+footwork+beginner+6+corners" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> 6-Corner Footwork</a>
+                    <a href="https://www.youtube.com/results?search_query=badminton+split+step+technique" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Split Step</a>
+                    <a href="https://www.youtube.com/results?search_query=badminton+lunge+technique+net" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Lunge Technique</a>
+                    <a href="https://www.youtube.com/results?search_query=tobias+wadenka+footwork+basics" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Wadenka: Footwork</a>
+                    <a href="https://www.youtube.com/results?search_query=பேட்மிண்டன்+footwork+காலடி+பயிற்சி+tamil" target="_blank" class="resource-link tamil"><span class="icon">&#9654;</span> Footwork (Tamil)</a>
+                    <a href="https://www.instagram.com/explore/tags/badmintonfootwork/" target="_blank" class="resource-link instagram"><span class="icon">&#128247;</span> #BadmintonFootwork</a>
+                </div>
+            </div>
+
+            <div class="tip-callout">
+                <strong>Footwork is 70% of Badminton:</strong> You can have great shots, but without footwork you'll always be late. Professional players train footwork MORE than shots. The shuttle can reach 300+ km/h &mdash; you need to be in position before it arrives.
+            </div>
+        </div>
+
+        <div class="week-block">
+            <h3>Weeks 7-8: Combining Footwork with Shots</h3>
+            <div class="skills-grid">
+                <div class="skill-item">Move to rear court + hit clear/drop</div>
+                <div class="skill-item">Move to net + hit net shot/lift</div>
+                <div class="skill-item">Recover to base between shots</div>
+                <div class="skill-item">Multi-shuttle drill (coach feeds continuously)</div>
+                <div class="skill-item">Front-back movement pattern</div>
+                <div class="skill-item">Diagonal movement pattern</div>
+            </div>
+            <div class="drill-box">
+                <h4>Drills</h4>
+                <ul>
+                    <li>2-corner drill: partner alternates net and rear court feeds, you move and hit</li>
+                    <li>4-corner drill: partner feeds to all 4 corners randomly</li>
+                    <li>Multi-shuttle: feeder throws 10 shuttles rapidly, you hit and recover each time</li>
+                    <li>Rally with movement focus: play points but count how quickly you return to base</li>
+                    <li>Wall rally: hit against wall, maintain correct footwork for each return</li>
+                </ul>
+            </div>
+            <div class="resources-section">
+                <h4>Watch These Tutorials:</h4>
+                <div class="resource-links">
+                    <a href="https://www.youtube.com/results?search_query=badminton+multi+shuttle+drill+training" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Multi-Shuttle Drill</a>
+                    <a href="https://www.youtube.com/results?search_query=badminton+footwork+with+shots+combination" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Footwork + Shots</a>
+                    <a href="https://www.youtube.com/results?search_query=badminton+base+position+recovery" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Base Recovery</a>
+                    <a href="https://www.youtube.com/results?search_query=badminton+wall+practice+drill" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Wall Rally Drill</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="weekly-schedule">
+            <h4>Suggested Weekly Schedule (Phase 2)</h4>
+            <div class="schedule-grid">
+                <div class="schedule-day"><strong>Mon</strong>Shadow footwork 20min + Hitting 30min</div>
+                <div class="schedule-day"><strong>Tue</strong>Game play 60min</div>
+                <div class="schedule-day"><strong>Wed</strong>Rest / Watch tutorials</div>
+                <div class="schedule-day"><strong>Thu</strong>Footwork drills 30min + Multi-shuttle</div>
+                <div class="schedule-day"><strong>Fri</strong>Game play 60min</div>
+                <div class="schedule-day"><strong>Sat</strong>Drilling + Games 90min</div>
+                <div class="schedule-day"><strong>Sun</strong>Rest / Light stretching</div>
+            </div>
+        </div>
+
+        <div class="milestone-box">
+            <h4>Phase 2 Milestone Checklist</h4>
+            <ul>
+                <li>Can reach all 6 corners with correct footwork pattern</li>
+                <li>Split step is becoming automatic before receiving</li>
+                <li>Return to base position after each shot</li>
+                <li>Rally 20+ shots with controlled movement</li>
+                <li>Shadow footwork star drill under 30 seconds (6 corners)</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- PHASE 3 -->
+    <div class="phase" id="phase3">
+        <div class="phase-header">
+            <div class="phase-number">3</div>
+            <div>
+                <div class="phase-title">Intermediate Strokes &amp; Net Play</div>
+                <div class="phase-subtitle">Goal: Full shot repertoire, net dominance</div>
+            </div>
+            <div class="phase-duration">Weeks 9-14</div>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress-fill" style="width: 50%; background: var(--level-intermediate);"></div>
+        </div>
+
+        <div class="week-block">
+            <h3>Weeks 9-10: Smash &amp; Drive</h3>
+            <div class="skills-grid">
+                <div class="skill-item">Forehand smash (overhead, steep angle downward)</div>
+                <div class="skill-item">Smash technique: full arm rotation, wrist snap</div>
+                <div class="skill-item">Jump smash introduction</div>
+                <div class="skill-item">Flat drive (fast, flat shot at body height)</div>
+                <div class="skill-item">Backhand drive</div>
+                <div class="skill-item">Half smash (controlled, angled smash at 70% power)</div>
+            </div>
+            <div class="drill-box">
+                <h4>Drills</h4>
+                <ul>
+                    <li>Smash practice: partner lifts high, you smash to targets (20 reps)</li>
+                    <li>Half-smash accuracy: aim for sideline or body, 70% power, 20 reps</li>
+                    <li>Drive rally: both players drive flat at each other from mid-court (fast hands)</li>
+                    <li>Smash and follow: smash, then move forward to kill the weak return</li>
+                    <li>Progressive smash: start at 50% power, increase to 100% over 10 shots</li>
+                </ul>
+            </div>
+            <div class="resources-section">
+                <h4>Watch These Tutorials:</h4>
+                <div class="resource-links">
+                    <a href="https://www.youtube.com/results?search_query=badminton+smash+technique+power+tutorial" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Smash Technique</a>
+                    <a href="https://www.youtube.com/results?search_query=badminton+jump+smash+beginner+learn" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Jump Smash</a>
+                    <a href="https://www.youtube.com/results?search_query=badminton+drive+shot+flat+technique" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Drive Shot</a>
+                    <a href="https://www.youtube.com/results?search_query=badminton+wrist+power+smash+generation" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Wrist Power</a>
+                    <a href="https://www.youtube.com/results?search_query=பேட்மிண்டன்+smash+அடிப்பது+tamil" target="_blank" class="resource-link tamil"><span class="icon">&#9654;</span> Smash (Tamil)</a>
+                </div>
+            </div>
+
+            <div class="tip-callout">
+                <strong>Smash Truth:</strong> Power comes from rotation (body turn &rarr; shoulder &rarr; forearm &rarr; wrist), NOT from muscle. A relaxed, well-timed stroke is faster than a tense, forced one. Focus on the kinetic chain: legs &rarr; hips &rarr; torso &rarr; arm &rarr; wrist &rarr; fingers.
+            </div>
+        </div>
+
+        <div class="week-block">
+            <h3>Weeks 11-12: Advanced Net Play</h3>
+            <div class="skills-grid">
+                <div class="skill-item">Net kill (shuttle above tape &rarr; smash it down)</div>
+                <div class="skill-item">Spinning net shot (tumble, slice)</div>
+                <div class="skill-item">Cross-court net shot</div>
+                <div class="skill-item">Net brush (gentle, just over tape with spin)</div>
+                <div class="skill-item">Forecourt interception (cutting off lifts)</div>
+                <div class="skill-item">Soft vs. tight net shots (when to use each)</div>
+            </div>
+            <div class="drill-box">
+                <h4>Drills</h4>
+                <ul>
+                    <li>Net kill reaction: partner lifts to net height, you kill immediately (20 reps)</li>
+                    <li>Spinning net shot: slice under shuttle for tumble, make it roll over net</li>
+                    <li>Cross-court net: hit net shot diagonally, make opponent cover more distance</li>
+                    <li>Net duel: both players at net, gentle rally (net shot &rarr; net shot)</li>
+                    <li>Feed and kill: partner feeds high to net, you lunge and kill down</li>
+                </ul>
+            </div>
+            <div class="resources-section">
+                <h4>Watch These Tutorials:</h4>
+                <div class="resource-links">
+                    <a href="https://www.youtube.com/results?search_query=badminton+net+kill+technique" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Net Kill</a>
+                    <a href="https://www.youtube.com/results?search_query=badminton+spinning+net+shot+tumble" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Spinning Net Shot</a>
+                    <a href="https://www.youtube.com/results?search_query=badminton+cross+net+shot+deception" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Cross Net Shot</a>
+                    <a href="https://www.youtube.com/results?search_query=badminton+net+play+pro+tips" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Pro Net Play</a>
+                    <a href="https://www.instagram.com/explore/tags/badmintonnetplay/" target="_blank" class="resource-link instagram"><span class="icon">&#128247;</span> #BadmintonNetPlay</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="week-block">
+            <h3>Weeks 13-14: Singles Strategy Basics</h3>
+            <div class="skills-grid">
+                <div class="skill-item">Singles base position (center, slightly behind mid)</div>
+                <div class="skill-item">4-corner attack pattern (move opponent around)</div>
+                <div class="skill-item">Recognizing when to attack vs. defend</div>
+                <div class="skill-item">Using the clear to push opponent back</div>
+                <div class="skill-item">Drop + net shot combination (front court traps)</div>
+                <div class="skill-item">Playing to opponent's backhand</div>
+            </div>
+            <div class="drill-box">
+                <h4>Drills</h4>
+                <ul>
+                    <li>Pattern play: clear, clear, drop, net kill sequence (practice 10 times)</li>
+                    <li>4-corner game: play points but you must hit to a different corner each time</li>
+                    <li>Backhand pressure: aim every shot to opponent's backhand corner</li>
+                    <li>Play singles sets to 11 with strategic focus (not just hitting hard)</li>
+                </ul>
+            </div>
+            <div class="resources-section">
+                <h4>Watch These Tutorials:</h4>
+                <div class="resource-links">
+                    <a href="https://www.youtube.com/results?search_query=badminton+singles+strategy+beginner+intermediate" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Singles Strategy</a>
+                    <a href="https://www.youtube.com/results?search_query=badminton+4+corners+attack+pattern" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> 4-Corner Attack</a>
+                    <a href="https://www.youtube.com/results?search_query=badminton+when+to+attack+defend" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Attack vs. Defend</a>
+                    <a href="https://www.youtube.com/results?search_query=badminton+singles+tactics+analysis" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Tactics Analysis</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="milestone-box">
+            <h4>Phase 3 Milestone Checklist</h4>
+            <ul>
+                <li>Smash is consistent and directed (not just hitting hard randomly)</li>
+                <li>Can execute net kills when shuttle is above tape</li>
+                <li>Comfortable playing full singles games with strategy</li>
+                <li>Drive rallies sustained for 10+ shots</li>
+                <li>Starting to use shot combinations rather than single shots</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- PHASE 4 -->
+    <div class="phase" id="phase4">
+        <div class="phase-header">
+            <div class="phase-number">4</div>
+            <div>
+                <div class="phase-title">Smash Defense, Doubles &amp; Power</div>
+                <div class="phase-subtitle">Goal: Solid defense, doubles play, consistent power</div>
+            </div>
+            <div class="phase-duration">Weeks 15-20</div>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress-fill" style="width: 70%; background: var(--level-intermediate);"></div>
+        </div>
+
+        <div class="week-block">
+            <h3>Weeks 15-16: Smash Defense &amp; Blocks</h3>
+            <div class="skills-grid">
+                <div class="skill-item">Forehand block (racket up, absorb pace, redirect)</div>
+                <div class="skill-item">Backhand block (compact, firm wrist)</div>
+                <div class="skill-item">Block to net (take pace off, land tight)</div>
+                <div class="skill-item">Defensive lift (high clear from defensive position)</div>
+                <div class="skill-item">Cross-court block (redirect smash diagonally)</div>
+                <div class="skill-item">Body defense (protecting yourself from body smashes)</div>
+                <div class="skill-item">Defensive stance (wide, low, racket centered)</div>
+                <div class="skill-item">Counter-drive (flat response to smash)</div>
+            </div>
+            <div class="drill-box">
+                <h4>Drills</h4>
+                <ul>
+                    <li>Smash-block drill: partner smashes, you block to net, 20 reps each side</li>
+                    <li>Continuous defense: partner smashes 10 in a row, you survive all 10</li>
+                    <li>Block placement: choose net, cross, or lift randomly, partner smashes</li>
+                    <li>Reaction drill: partner smashes at body, you defend (start slow, build speed)</li>
+                    <li>Drive-block transition: drive rally, one player smashes, other blocks</li>
+                </ul>
+            </div>
+            <div class="resources-section">
+                <h4>Watch These Tutorials:</h4>
+                <div class="resource-links">
+                    <a href="https://www.youtube.com/results?search_query=badminton+smash+defense+block+technique" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Smash Defense</a>
+                    <a href="https://www.youtube.com/results?search_query=badminton+block+to+net+tutorial" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Block to Net</a>
+                    <a href="https://www.youtube.com/results?search_query=badminton+defensive+stance+positioning" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Defensive Stance</a>
+                    <a href="https://www.youtube.com/results?search_query=badminton+counter+attack+defense" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Counter Attack</a>
+                    <a href="https://www.youtube.com/results?search_query=பேட்மிண்டன்+defense+block+tamil" target="_blank" class="resource-link tamil"><span class="icon">&#9654;</span> Defense (Tamil)</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="week-block">
+            <h3>Weeks 17-18: Doubles Play</h3>
+            <div class="skills-grid">
+                <div class="skill-item">Doubles formation: sides (defense) vs. front-back (attack)</div>
+                <div class="skill-item">Rotation: when to switch from sides to front-back</div>
+                <div class="skill-item">Front player role: intercept, kill, pressure</div>
+                <div class="skill-item">Back player role: smash, clear, control rally</div>
+                <div class="skill-item">Doubles serve strategy (low serve dominant)</div>
+                <div class="skill-item">Third shot attack (rush the serve return)</div>
+                <div class="skill-item">Communication with partner</div>
+                <div class="skill-item">Mixed doubles basics (lady in front strategy)</div>
+            </div>
+            <div class="drill-box">
+                <h4>Drills</h4>
+                <ul>
+                    <li>Rotation drill: practice switching from sides to front-back formation</li>
+                    <li>Serve-and-attack: low serve, partner rushes net, back player covers</li>
+                    <li>Front-court intercept: front player cuts off lifts and drives</li>
+                    <li>2-on-1 defense: two attack, one defends (builds reactions)</li>
+                    <li>Play doubles sets with assigned roles (front/back) swapping each game</li>
+                </ul>
+            </div>
+            <div class="resources-section">
+                <h4>Watch These Tutorials:</h4>
+                <div class="resource-links">
+                    <a href="https://www.youtube.com/results?search_query=badminton+doubles+rotation+formation" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Doubles Rotation</a>
+                    <a href="https://www.youtube.com/results?search_query=badminton+doubles+strategy+positioning" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Doubles Strategy</a>
+                    <a href="https://www.youtube.com/results?search_query=badminton+doubles+serve+receive+attack" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Serve &amp; Attack</a>
+                    <a href="https://www.youtube.com/results?search_query=badminton+mixed+doubles+basics+strategy" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Mixed Doubles</a>
+                    <a href="https://www.youtube.com/results?search_query=பேட்மிண்டன்+doubles+strategy+tamil" target="_blank" class="resource-link tamil"><span class="icon">&#9654;</span> Doubles (Tamil)</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="week-block">
+            <h3>Weeks 19-20: Power Generation &amp; Fitness</h3>
+            <div class="skills-grid">
+                <div class="skill-item">Pronation and supination (forearm rotation for power)</div>
+                <div class="skill-item">Finger power (grip tightening at impact)</div>
+                <div class="skill-item">Jump smash refinement (timing, contact point)</div>
+                <div class="skill-item">Backhand flick (wrist power from tight space)</div>
+                <div class="skill-item">Stamina: sustaining pace for full 3-game match</div>
+                <div class="skill-item">Agility: ladder drills, cone drills for quickness</div>
+            </div>
+            <div class="drill-box">
+                <h4>Drills &amp; Fitness</h4>
+                <ul>
+                    <li>Pronation drill: shadow swing focusing on forearm rotation, 30 reps</li>
+                    <li>Finger power: squeeze grip at impact only (practice with shuttle feeds)</li>
+                    <li>Jump smash: 20 jump smashes from rear court (focus on timing, not height)</li>
+                    <li>Ladder drills: 5 patterns, 3 sets each (speed and coordination)</li>
+                    <li>Court sprints: suicide runs (net &rarr; service line &rarr; net &rarr; back line), 6 reps</li>
+                    <li>Shadow badminton: full intensity footwork for 2 minutes, 30s rest, 6 sets</li>
+                </ul>
+            </div>
+            <div class="resources-section">
+                <h4>Watch These Tutorials:</h4>
+                <div class="resource-links">
+                    <a href="https://www.youtube.com/results?search_query=badminton+pronation+supination+power" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Pronation Power</a>
+                    <a href="https://www.youtube.com/results?search_query=badminton+finger+power+grip+technique" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Finger Power</a>
+                    <a href="https://www.youtube.com/results?search_query=badminton+fitness+training+agility" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Fitness Training</a>
+                    <a href="https://www.youtube.com/results?search_query=badminton+backhand+flick+wrist+power" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Backhand Flick</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="milestone-box">
+            <h4>Phase 4 Milestone Checklist</h4>
+            <ul>
+                <li>Can defend smashes consistently (block to net or lift deep)</li>
+                <li>Understand doubles rotation and play competent doubles</li>
+                <li>Jump smash is developing with reasonable accuracy</li>
+                <li>Backhand power shots are improving (not just defensive)</li>
+                <li>Can play a full 3-game match without extreme fatigue</li>
+                <li>Winning against other intermediate players regularly</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- PHASE 5 -->
+    <div class="phase" id="phase5">
+        <div class="phase-header">
+            <div class="phase-number">5</div>
+            <div>
+                <div class="phase-title">Advanced Techniques &amp; Deception</div>
+                <div class="phase-subtitle">Goal: Deceptive shots, advanced placement</div>
+            </div>
+            <div class="phase-duration">Weeks 21-26</div>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress-fill" style="width: 85%; background: var(--level-advanced);"></div>
+        </div>
+
+        <div class="week-block">
+            <h3>Weeks 21-23: Deception &amp; Shot Variation</h3>
+            <div class="skills-grid">
+                <div class="skill-item">Deceptive clear (looks like drop, goes deep)</div>
+                <div class="skill-item">Slice drop (looks like smash, drops slowly)</div>
+                <div class="skill-item">Reverse slice (cross-court deception)</div>
+                <div class="skill-item">Hold and flick (delay, change direction last moment)</div>
+                <div class="skill-item">Fake smash to drop shot</div>
+                <div class="skill-item">Double motion at net (fake one way, hit other)</div>
+                <div class="skill-item">Stick smash (straight down, minimal follow-through)</div>
+                <div class="skill-item">Cross-court smash</div>
+            </div>
+            <div class="drill-box">
+                <h4>Drills</h4>
+                <ul>
+                    <li>Deception practice: same approach for clear, drop, and smash &mdash; partner guesses</li>
+                    <li>Slice drop: contact shuttle at same point as smash, but slice under &mdash; 20 reps</li>
+                    <li>Hold drill: at net, hold position, delay, then flick cross-court</li>
+                    <li>Random shot game: partner feeds high, you randomly choose shot (no pattern)</li>
+                    <li>Deception rally: play points, but try to disguise every shot</li>
+                </ul>
+            </div>
+            <div class="resources-section">
+                <h4>Watch These Tutorials:</h4>
+                <div class="resource-links">
+                    <a href="https://www.youtube.com/results?search_query=badminton+deception+shots+tutorial" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Deception Shots</a>
+                    <a href="https://www.youtube.com/results?search_query=badminton+slice+drop+shot+technique" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Slice Drop</a>
+                    <a href="https://www.youtube.com/results?search_query=badminton+reverse+slice+cross+court" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Reverse Slice</a>
+                    <a href="https://www.youtube.com/results?search_query=badminton+hold+flick+net+deception" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Hold &amp; Flick</a>
+                    <a href="https://www.youtube.com/results?search_query=badminton+stick+smash+technique" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Stick Smash</a>
+                    <a href="https://www.youtube.com/results?search_query=lee+chong+wei+deception+shots" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> LCW Deception</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="week-block">
+            <h3>Weeks 24-26: Advanced Footwork &amp; Speed</h3>
+            <div class="skills-grid">
+                <div class="skill-item">Scissor kick (rear court shot with leg switch)</div>
+                <div class="skill-item">China jump (airborne smash from rear court)</div>
+                <div class="skill-item">Cross-step to backhand rear corner</div>
+                <div class="skill-item">Speed recovery (explosive return to base)</div>
+                <div class="skill-item">Deceptive movement (fake move one way, go other)</div>
+                <div class="skill-item">Reduced steps (fewer steps = faster arrival)</div>
+                <div class="skill-item">Side-on position for overhead shots</div>
+                <div class="skill-item">Advanced split-step timing variations</div>
+            </div>
+            <div class="drill-box">
+                <h4>Drills</h4>
+                <ul>
+                    <li>Scissor kick practice: rear court shots with proper leg switch, 20 reps</li>
+                    <li>Speed shadow: full-intensity 6-corner movement for 45 seconds (time rest 1:1)</li>
+                    <li>Reduced-step drill: reach each corner in minimum steps possible</li>
+                    <li>Multi-shuttle speed: 20 shuttles fed rapidly, maximum intensity</li>
+                    <li>Match simulation: play points at 100% intensity, focus on recovery speed</li>
+                </ul>
+            </div>
+            <div class="resources-section">
+                <h4>Watch These Tutorials:</h4>
+                <div class="resource-links">
+                    <a href="https://www.youtube.com/results?search_query=badminton+scissor+kick+rear+court" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Scissor Kick</a>
+                    <a href="https://www.youtube.com/results?search_query=badminton+china+jump+smash+technique" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> China Jump</a>
+                    <a href="https://www.youtube.com/results?search_query=badminton+advanced+footwork+speed+pro" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Advanced Footwork</a>
+                    <a href="https://www.youtube.com/results?search_query=badminton+pro+footwork+slow+motion" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Pro Footwork Slow-Mo</a>
+                    <a href="https://www.youtube.com/results?search_query=kento+momota+footwork+analysis" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Momota Footwork</a>
+                    <a href="https://www.instagram.com/explore/tags/badmintondeception/" target="_blank" class="resource-link instagram"><span class="icon">&#128247;</span> #BadmintonDeception</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="milestone-box">
+            <h4>Phase 5 Milestone Checklist</h4>
+            <ul>
+                <li>Can disguise shots (opponent can't read your intention easily)</li>
+                <li>Slice drop and reverse slice are consistent</li>
+                <li>Scissor kick is natural for rear court shots</li>
+                <li>Net play includes deception (hold, double motion)</li>
+                <li>Footwork speed has noticeably improved (fewer steps, faster recovery)</li>
+                <li>Beating most club-level intermediate players</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- PHASE 6 -->
+    <div class="phase" id="phase6">
+        <div class="phase-header">
+            <div class="phase-number">6</div>
+            <div>
+                <div class="phase-title">Match Strategy &amp; Competition</div>
+                <div class="phase-subtitle">Goal: Tournament-ready, strategic mastery</div>
+            </div>
+            <div class="phase-duration">Weeks 27-32</div>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress-fill" style="width: 100%; background: var(--level-advanced);"></div>
+        </div>
+
+        <div class="week-block">
+            <h3>Weeks 27-29: Singles Match Strategy</h3>
+            <div class="skills-grid">
+                <div class="skill-item">Reading opponent's weaknesses in first few rallies</div>
+                <div class="skill-item">Changing game plan mid-match</div>
+                <div class="skill-item">Pace control: speeding up and slowing down rallies</div>
+                <div class="skill-item">Using height variation (flat vs. high trajectory)</div>
+                <div class="skill-item">Attacking the body (jamming opponent)</div>
+                <div class="skill-item">Building pressure: repeated shots to weakness</div>
+                <div class="skill-item">Closing out games (playing smart at 18+)</div>
+                <div class="skill-item">Physical peaking for key points</div>
+            </div>
+            <div class="drill-box">
+                <h4>Practice</h4>
+                <ul>
+                    <li>Situational games: start at 18-18, practice closing (mental toughness)</li>
+                    <li>Adaptation game: play 11 points one way, switch strategy for next 11</li>
+                    <li>Pattern disruption: if opponent adapts to your pattern, have plan B and C</li>
+                    <li>Watch and analyze: record matches, identify 3 improvement areas each week</li>
+                    <li>Play up: seek opponents who are slightly better than you</li>
+                </ul>
+            </div>
+            <div class="resources-section">
+                <h4>Watch These Tutorials:</h4>
+                <div class="resource-links">
+                    <a href="https://www.youtube.com/results?search_query=badminton+singles+match+strategy+advanced" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Advanced Singles Strategy</a>
+                    <a href="https://www.youtube.com/results?search_query=badminton+game+plan+reading+opponent" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Reading Opponents</a>
+                    <a href="https://www.youtube.com/results?search_query=badminton+pace+control+tempo+change" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Pace Control</a>
+                    <a href="https://www.youtube.com/results?search_query=badminton+pro+match+analysis+tactics" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Pro Match Analysis</a>
+                    <a href="https://www.youtube.com/results?search_query=viktor+axelsen+match+analysis+strategy" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Axelsen Analysis</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="week-block">
+            <h3>Weeks 30-31: Advanced Doubles &amp; Mixed</h3>
+            <div class="skills-grid">
+                <div class="skill-item">Flat game doubles (fast, low trajectory)</div>
+                <div class="skill-item">Quick-fire exchanges at net (reflex kills)</div>
+                <div class="skill-item">Setting up partner's kill shot</div>
+                <div class="skill-item">Serve variation under pressure</div>
+                <div class="skill-item">Third-shot dominance (controlling the rally from serve)</div>
+                <div class="skill-item">Mixed doubles: front player's expanded role</div>
+                <div class="skill-item">Defensive counter-attack as a pair</div>
+                <div class="skill-item">Dealing with left-handed opponents</div>
+            </div>
+            <div class="drill-box">
+                <h4>Practice</h4>
+                <ul>
+                    <li>Drive-battle doubles: play entire rallies flat and fast, no lifts</li>
+                    <li>Serve-rush: low serve, partner crashes net, practice 20 sequences</li>
+                    <li>Defense-to-attack transition: block &rarr; partner intercepts the next shot</li>
+                    <li>Play competitive doubles with rotation and communication focus</li>
+                    <li>Tournament simulation: best-of-3, proper warm-up, interval breaks</li>
+                </ul>
+            </div>
+            <div class="resources-section">
+                <h4>Watch These Tutorials:</h4>
+                <div class="resource-links">
+                    <a href="https://www.youtube.com/results?search_query=badminton+advanced+doubles+tactics" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Advanced Doubles</a>
+                    <a href="https://www.youtube.com/results?search_query=badminton+doubles+flat+game+fast+exchanges" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Flat Game Doubles</a>
+                    <a href="https://www.youtube.com/results?search_query=badminton+doubles+defense+to+attack" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Defense to Attack</a>
+                    <a href="https://www.youtube.com/results?search_query=badminton+mixed+doubles+strategy+advanced" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Mixed Strategy</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="week-block">
+            <h3>Week 32: Tournament Preparation &amp; Mental Game</h3>
+            <div class="skills-grid">
+                <div class="skill-item">Pre-match warm-up routine (shadow + feeds)</div>
+                <div class="skill-item">Mental toughness: staying focused after losing points</div>
+                <div class="skill-item">Interval management (using 60-second breaks wisely)</div>
+                <div class="skill-item">Hydration and nutrition during matches</div>
+                <div class="skill-item">Dealing with nerves (first-tournament anxiety)</div>
+                <div class="skill-item">Post-match analysis: what worked, what didn't</div>
+            </div>
+            <div class="drill-box">
+                <h4>Tournament Preparation Checklist</h4>
+                <ul>
+                    <li>Register for a local club tournament or league</li>
+                    <li>Play at least 3 competitive matches per week against stronger opponents</li>
+                    <li>Develop a 15-minute pre-match warm-up routine</li>
+                    <li>Practice under pressure: play points with consequences (push-ups for errors)</li>
+                    <li>Visualize match situations before sleeping: see yourself executing shots</li>
+                    <li>Bring 2 rackets (same model), water, snacks, and grip tape to tournaments</li>
+                </ul>
+            </div>
+            <div class="resources-section">
+                <h4>Watch These Tutorials:</h4>
+                <div class="resource-links">
+                    <a href="https://www.youtube.com/results?search_query=badminton+tournament+preparation+tips" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Tournament Prep</a>
+                    <a href="https://www.youtube.com/results?search_query=badminton+mental+game+stay+focused" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Mental Game</a>
+                    <a href="https://www.youtube.com/results?search_query=badminton+warm+up+routine+before+match" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Warm-Up Routine</a>
+                    <a href="https://www.youtube.com/results?search_query=badminton+fitness+conditioning+training+plan" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Conditioning Plan</a>
+                    <a href="https://www.youtube.com/results?search_query=பேட்மிண்டன்+tournament+preparation+tamil" target="_blank" class="resource-link tamil"><span class="icon">&#9654;</span> Tournament (Tamil)</a>
+                </div>
+            </div>
+
+            <div class="tip-callout">
+                <strong>The Advanced Difference:</strong> At this level, everyone has the shots. What separates players is: (1) consistency under pressure, (2) shot selection &mdash; picking the RIGHT shot, not just the hardest one, (3) deception &mdash; making opponents move before you hit, (4) fitness &mdash; being strong in the third game.
+            </div>
+        </div>
+
+        <div class="weekly-schedule">
+            <h4>Suggested Weekly Schedule (Phase 6)</h4>
+            <div class="schedule-grid">
+                <div class="schedule-day"><strong>Mon</strong>Drilling 60min + Fitness 30min</div>
+                <div class="schedule-day"><strong>Tue</strong>Match play 90min</div>
+                <div class="schedule-day"><strong>Wed</strong>Footwork + Shadow 45min</div>
+                <div class="schedule-day"><strong>Thu</strong>Match play 90min</div>
+                <div class="schedule-day"><strong>Fri</strong>Drilling + Deception 60min</div>
+                <div class="schedule-day"><strong>Sat</strong>Tournament / Competitive play</div>
+                <div class="schedule-day"><strong>Sun</strong>Rest / Video analysis</div>
+            </div>
+        </div>
+
+        <div class="milestone-box">
+            <h4>Phase 6 &mdash; You're an Advanced Player When:</h4>
+            <ul>
+                <li>All shots are consistent and can be disguised</li>
+                <li>Footwork is fast, efficient, and automatic</li>
+                <li>You have a game plan and can adapt it mid-match</li>
+                <li>Defense is solid &mdash; you can turn defense into attack</li>
+                <li>You can play both singles and doubles at a competitive level</li>
+                <li>Deception is natural &mdash; opponents can't read you easily</li>
+                <li>You can sustain intensity for 3 full games</li>
+                <li>You compete well in local/club tournaments</li>
+                <li>Smash speed, accuracy, and consistency are all reliable</li>
+                <li>You're actively analyzing and improving after every session</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Principles Section -->
+    <div class="equipment-section">
+        <h2>Key Principles Throughout Your Journey</h2>
+        <div class="equipment-grid">
+            <div class="equipment-card">
+                <div class="emoji">&#129406;</div>
+                <h4>Footwork First</h4>
+                <p>Good footwork makes every shot easier. Bad footwork makes every shot impossible. Train feet before hands.</p>
+            </div>
+            <div class="equipment-card">
+                <div class="emoji">&#129309;</div>
+                <h4>Grip = Everything</h4>
+                <p>Wrong grip = ceiling on improvement. Correct grip unlocks power, control, and deception.</p>
+            </div>
+            <div class="equipment-card">
+                <div class="emoji">&#127919;</div>
+                <h4>Placement > Power</h4>
+                <p>A well-placed drop wins more points than a wild smash. Accuracy beats raw power at every level.</p>
+            </div>
+            <div class="equipment-card">
+                <div class="emoji">&#128064;</div>
+                <h4>Watch &amp; Learn</h4>
+                <p>Watch pro matches regularly. Study their footwork, positioning, and shot selection more than trick shots.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Common Mistakes -->
+    <div class="equipment-section">
+        <h2>Top 10 Beginner Mistakes to Avoid</h2>
+        <div class="equipment-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+            <div class="equipment-card" style="text-align: left;">
+                <h4>1. Panhandle Grip</h4>
+                <p>Using a frying-pan grip limits all shots. Fix this immediately.</p>
+            </div>
+            <div class="equipment-card" style="text-align: left;">
+                <h4>2. Flat-Footed Stance</h4>
+                <p>Always be on balls of feet, ready to move any direction.</p>
+            </div>
+            <div class="equipment-card" style="text-align: left;">
+                <h4>3. Hitting with Arm Only</h4>
+                <p>Power comes from rotation, not arm strength. Use your whole body.</p>
+            </div>
+            <div class="equipment-card" style="text-align: left;">
+                <h4>4. Not Returning to Base</h4>
+                <p>After every shot, move back to center. Don't watch your shot.</p>
+            </div>
+            <div class="equipment-card" style="text-align: left;">
+                <h4>5. Always Smashing</h4>
+                <p>Smashing from a bad position gives points away. Attack only when ready.</p>
+            </div>
+            <div class="equipment-card" style="text-align: left;">
+                <h4>6. Ignoring Backhand</h4>
+                <p>A weak backhand is a target. Practice it equally or opponents exploit it.</p>
+            </div>
+            <div class="equipment-card" style="text-align: left;">
+                <h4>7. Too Tight Grip</h4>
+                <p>Squeezing the racket all the time kills wrist speed. Relax, tighten only on impact.</p>
+            </div>
+            <div class="equipment-card" style="text-align: left;">
+                <h4>8. Running Shoes on Court</h4>
+                <p>Running shoes have grip that catches on court &mdash; ankle injuries. Use court shoes.</p>
+            </div>
+            <div class="equipment-card" style="text-align: left;">
+                <h4>9. Lifting Every Shot</h4>
+                <p>Every lift gives your opponent a chance to attack. Keep shots low when possible.</p>
+            </div>
+            <div class="equipment-card" style="text-align: left;">
+                <h4>10. No Split Step</h4>
+                <p>Without a split step you're always reacting late. Split before every return.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Additional Resources -->
+    <div class="channel-directory">
+        <h2>Additional Free Resources</h2>
+        <div class="channel-list">
+            <div class="channel-card">
+                <h4>BWF Official Rules</h4>
+                <p>Complete laws of badminton (free PDF)</p>
+                <a href="https://corporate.bwfbadminton.com/statutes/#lawsofbadminton" target="_blank">bwfbadminton.com/rules</a>
+            </div>
+            <div class="channel-card">
+                <h4>Badminton Court Finder</h4>
+                <p>Find courts and clubs near you</p>
+                <a href="https://www.google.com/maps/search/badminton+courts+near+me" target="_blank">Google Maps: Badminton Courts</a>
+            </div>
+            <div class="channel-card">
+                <h4>Tournament Finder (India)</h4>
+                <p>Register for BAI sanctioned tournaments</p>
+                <a href="https://www.badmintonindia.org/" target="_blank">badmintonindia.org</a>
+            </div>
+            <div class="channel-card">
+                <h4>r/Badminton</h4>
+                <p>Community tips, racket reviews, technique discussions</p>
+                <a href="https://www.reddit.com/r/badminton/" target="_blank">reddit.com/r/badminton</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <p>Badminton Learning Program &mdash; Complete Beginner to Advanced Player</p>
+    <p style="margin-top: 0.5rem; font-size: 0.8rem;">Timeline assumes 4-5 sessions per week, 45-90 minutes each. Individual progress varies based on athletic background, coaching access, and practice quality. Playing with stronger opponents accelerates improvement dramatically.</p>
+</footer>
+
+</body>
+</html>

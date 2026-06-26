@@ -1,0 +1,1449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swimming: Complete Beginner to Confident Swimmer</title>
+    <style>
+        :root {
+            --primary: #0077b6;
+            --primary-light: #0096c7;
+            --accent: #f77f00;
+            --accent-light: #fcbf49;
+            --bg: #f0f8ff;
+            --card-bg: #ffffff;
+            --text: #212529;
+            --text-muted: #6c757d;
+            --border: #dee2e6;
+            --level-beginner: #90e0ef;
+            --level-intermediate: #00b4d8;
+            --level-advanced: #023e8a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .level-scale {
+            background: white;
+            color: var(--text);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem auto;
+            max-width: 700px;
+            text-align: left;
+        }
+
+        .level-scale h3 {
+            margin-bottom: 0.75rem;
+            color: var(--primary);
+        }
+
+        .level-scale ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .level-scale li {
+            padding: 0.3rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .level-scale li:last-child {
+            border-bottom: none;
+        }
+
+        .level-scale .level-num {
+            font-weight: 700;
+            color: var(--primary);
+            display: inline-block;
+            width: 80px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .phase {
+            margin-bottom: 3rem;
+        }
+
+        .phase-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 3px solid var(--primary);
+        }
+
+        .phase-number {
+            background: var(--primary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .phase-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .phase-subtitle {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .phase-duration {
+            margin-left: auto;
+            background: var(--accent-light);
+            color: #333;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .week-block {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            border-left: 4px solid var(--primary-light);
+        }
+
+        .week-block h3 {
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+            font-size: 1.15rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            .phase-header {
+                flex-wrap: wrap;
+            }
+            .phase-duration {
+                margin-left: 0;
+            }
+        }
+
+        .skill-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+
+        .skill-item::before {
+            content: "\2713";
+            color: var(--primary);
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .drill-box {
+            background: #e0f7fa;
+            border: 1px solid #b2ebf2;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 0.75rem;
+        }
+
+        .drill-box h4 {
+            color: var(--primary);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .drill-box ul {
+            padding-left: 1.2rem;
+            font-size: 0.9rem;
+        }
+
+        .drill-box li {
+            margin-bottom: 0.3rem;
+        }
+
+        .resources-section {
+            margin-top: 1rem;
+        }
+
+        .resources-section h4 {
+            color: var(--accent);
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .resource-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .resource-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            background: #fff3e0;
+            color: #e65100;
+            padding: 0.35rem 0.7rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+
+        .resource-link:hover {
+            background: #ffe0b2;
+        }
+
+        .resource-link.youtube {
+            background: #fce4ec;
+            color: #c62828;
+        }
+
+        .resource-link.youtube:hover {
+            background: #ffcdd2;
+        }
+
+        .resource-link.tamil {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .resource-link.tamil:hover {
+            background: #c8e6c9;
+        }
+
+        .resource-link.instagram {
+            background: #f3e5f5;
+            color: #6a1b9a;
+        }
+
+        .resource-link.instagram:hover {
+            background: #e1bee7;
+        }
+
+        .icon {
+            font-size: 1rem;
+        }
+
+        .milestone-box {
+            background: linear-gradient(135deg, #e1f5fe, #b3e5fc);
+            border: 2px solid var(--primary-light);
+            border-radius: 10px;
+            padding: 1.2rem;
+            margin-top: 1rem;
+        }
+
+        .milestone-box h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .milestone-box ul {
+            padding-left: 1.2rem;
+            font-size: 0.9rem;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: var(--border);
+            border-radius: 4px;
+            margin: 1rem 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 0.3s;
+        }
+
+        .equipment-section {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+
+        .equipment-section h2 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .equipment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .equipment-card {
+            background: #e0f7fa;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .equipment-card .emoji {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .equipment-card h4 {
+            font-size: 0.95rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .equipment-card p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .tip-callout {
+            background: #e3f2fd;
+            border-left: 4px solid #1976d2;
+            border-radius: 0 8px 8px 0;
+            padding: 1rem;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+
+        .tip-callout strong {
+            color: #1565c0;
+        }
+
+        .safety-callout {
+            background: #fff3e0;
+            border-left: 4px solid #e65100;
+            border-radius: 0 8px 8px 0;
+            padding: 1rem;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+
+        .safety-callout strong {
+            color: #e65100;
+        }
+
+        .channel-directory {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+
+        .channel-directory h2 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .channel-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+
+        .channel-card {
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1rem;
+        }
+
+        .channel-card h4 {
+            font-size: 0.95rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .channel-card .lang-tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            padding: 0.1rem 0.4rem;
+            border-radius: 3px;
+            margin-left: 0.3rem;
+            font-weight: 600;
+        }
+
+        .lang-tag.english {
+            background: #e3f2fd;
+            color: #1565c0;
+        }
+
+        .lang-tag.tamil {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .channel-card p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+
+        .channel-card a {
+            color: var(--primary);
+            font-size: 0.85rem;
+            text-decoration: none;
+        }
+
+        .channel-card a:hover {
+            text-decoration: underline;
+        }
+
+        .weekly-schedule {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+
+        .weekly-schedule h4 {
+            font-size: 0.9rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 0.5rem;
+            font-size: 0.8rem;
+        }
+
+        .schedule-day {
+            background: white;
+            padding: 0.5rem;
+            border-radius: 6px;
+            text-align: center;
+            border: 1px solid var(--border);
+        }
+
+        .schedule-day strong {
+            display: block;
+            color: var(--primary);
+            margin-bottom: 0.2rem;
+        }
+
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        .toc {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+
+        .toc h2 {
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+            font-size: 1.2rem;
+        }
+
+        .toc ol {
+            padding-left: 1.5rem;
+        }
+
+        .toc li {
+            margin-bottom: 0.4rem;
+        }
+
+        .toc a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .toc a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Swimming Learning Program</h1>
+    <p>A structured path from complete beginner (water-fearful) to a confident, efficient swimmer across all four strokes. Tutorials in English and Tamil.</p>
+    <div class="level-scale">
+        <h3>Swimmer Level Progression</h3>
+        <ul>
+            <li><span class="level-num">Level 1</span> Water comfort, floating, basic breathing</li>
+            <li><span class="level-num">Level 2</span> Can swim 25m freestyle with basic form</li>
+            <li><span class="level-num">Level 3</span> Comfortable with freestyle &amp; backstroke, 200m continuous</li>
+            <li><span class="level-num">Level 4</span> All four strokes, flip turns, 500m+ continuous</li>
+            <li><span class="level-num">Level 5</span> Efficient technique, endurance, open water capable</li>
+        </ul>
+    </div>
+</header>
+
+<div class="container">
+
+    <div class="toc">
+        <h2>Program Overview</h2>
+        <ol>
+            <li><a href="#phase1">Phase 1: Water Comfort &amp; Safety (Weeks 1-3) &mdash; Overcome Fear</a></li>
+            <li><a href="#phase2">Phase 2: Floating &amp; Breathing (Weeks 4-6) &mdash; Foundation Skills</a></li>
+            <li><a href="#phase3">Phase 3: Freestyle (Front Crawl) (Weeks 7-11) &mdash; Your First Stroke</a></li>
+            <li><a href="#phase4">Phase 4: Backstroke &amp; Breaststroke (Weeks 12-17) &mdash; Expanding Your Arsenal</a></li>
+            <li><a href="#phase5">Phase 5: Butterfly &amp; Endurance (Weeks 18-24) &mdash; Complete Swimmer</a></li>
+            <li><a href="#phase6">Phase 6: Efficiency &amp; Open Water (Weeks 25-30) &mdash; Advanced</a></li>
+        </ol>
+    </div>
+
+    <!-- Safety Section -->
+    <div class="equipment-section">
+        <h2>Safety First</h2>
+        <div class="safety-callout">
+            <strong>Critical Rules:</strong> Never swim alone as a beginner. Always practice in a pool with a lifeguard or experienced swimmer present. Learn where the depth markers are. Know your limits &mdash; fatigue in water is dangerous.
+        </div>
+        <div class="equipment-grid">
+            <div class="equipment-card">
+                <div class="emoji">&#128716;</div>
+                <h4>Never Swim Alone</h4>
+                <p>Always have a buddy or swim where a lifeguard is present.</p>
+            </div>
+            <div class="equipment-card">
+                <div class="emoji">&#9888;&#65039;</div>
+                <h4>Know the Depth</h4>
+                <p>Start in shallow water (waist/chest deep). Move deeper only when ready.</p>
+            </div>
+            <div class="equipment-card">
+                <div class="emoji">&#128167;</div>
+                <h4>No Panic</h4>
+                <p>If tired, flip to your back and float. Never thrash &mdash; relax and breathe.</p>
+            </div>
+            <div class="equipment-card">
+                <div class="emoji">&#129657;</div>
+                <h4>Warm Up</h4>
+                <p>Always warm up before swimming. Never jump into cold water suddenly.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Equipment Section -->
+    <div class="equipment-section">
+        <h2>Essential Equipment</h2>
+        <div class="equipment-grid">
+            <div class="equipment-card">
+                <div class="emoji">&#129404;</div>
+                <h4>Swim Goggles</h4>
+                <p>Anti-fog, UV protection. Essential for seeing underwater and proper technique.</p>
+            </div>
+            <div class="equipment-card">
+                <div class="emoji">&#128089;</div>
+                <h4>Swimsuit</h4>
+                <p>Fitted swimsuit (jammers for men, one-piece for women). No loose clothing.</p>
+            </div>
+            <div class="equipment-card">
+                <div class="emoji">&#127946;</div>
+                <h4>Swim Cap</h4>
+                <p>Silicone cap reduces drag, protects hair from chlorine.</p>
+            </div>
+            <div class="equipment-card">
+                <div class="emoji">&#128311;</div>
+                <h4>Kickboard</h4>
+                <p>For kick drills. Most pools provide them. Essential for beginners.</p>
+            </div>
+            <div class="equipment-card">
+                <div class="emoji">&#128998;</div>
+                <h4>Pull Buoy</h4>
+                <p>Placed between legs to isolate upper body. Used from Phase 3 onwards.</p>
+            </div>
+            <div class="equipment-card">
+                <div class="emoji">&#128307;</div>
+                <h4>Fins (Optional)</h4>
+                <p>Short fins help with kick technique and body position. Great training tool.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Channel Directory -->
+    <div class="channel-directory">
+        <h2>Recommended Free Tutorial Channels</h2>
+        <div class="channel-list">
+            <div class="channel-card">
+                <h4>Effortless Swimming <span class="lang-tag english">EN</span></h4>
+                <p>Technique-focused tutorials, drill breakdowns, stroke analysis</p>
+                <a href="https://www.youtube.com/@EffortlessSwimming" target="_blank">youtube.com/@EffortlessSwimming</a>
+            </div>
+            <div class="channel-card">
+                <h4>Skills NT Swimming <span class="lang-tag english">EN</span></h4>
+                <p>Short, clear technique videos with underwater footage</p>
+                <a href="https://www.youtube.com/@skillswimming" target="_blank">youtube.com/@skillswimming</a>
+            </div>
+            <div class="channel-card">
+                <h4>MySwimPro <span class="lang-tag english">EN</span></h4>
+                <p>Beginner-friendly tutorials, workouts, and drills</p>
+                <a href="https://www.youtube.com/@MySwimPro" target="_blank">youtube.com/@MySwimPro</a>
+            </div>
+            <div class="channel-card">
+                <h4>Swim England <span class="lang-tag english">EN</span></h4>
+                <p>Official learn-to-swim progressions and technique guides</p>
+                <a href="https://www.youtube.com/@swimengland" target="_blank">youtube.com/@swimengland</a>
+            </div>
+            <div class="channel-card">
+                <h4>Swimming Tamil Tips <span class="lang-tag tamil">Tamil</span></h4>
+                <p>Tamil swimming tutorials for beginners, fear overcoming</p>
+                <a href="https://www.youtube.com/results?search_query=swimming+tips+tamil+beginners" target="_blank">Search: Swimming Tamil Tips</a>
+            </div>
+            <div class="channel-card">
+                <h4>Aravind Swimming Academy <span class="lang-tag tamil">Tamil</span></h4>
+                <p>Step-by-step swimming lessons in Tamil</p>
+                <a href="https://www.youtube.com/results?search_query=aravind+swimming+academy+tamil" target="_blank">Search: Aravind Swimming</a>
+            </div>
+            <div class="channel-card">
+                <h4>SwimUp - Learn Swimming Tamil <span class="lang-tag tamil">Tamil</span></h4>
+                <p>Water confidence, floating, and stroke tutorials in Tamil</p>
+                <a href="https://www.youtube.com/results?search_query=learn+swimming+tamil+step+by+step" target="_blank">Search: Swimming Tamil Step-by-Step</a>
+            </div>
+            <div class="channel-card">
+                <h4>@swim_teach (IG) <span class="lang-tag english">EN</span></h4>
+                <p>Quick reels on technique fixes and drills</p>
+                <a href="https://www.instagram.com/swim_teach/" target="_blank">instagram.com/swim_teach</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- PHASE 1 -->
+    <div class="phase" id="phase1">
+        <div class="phase-header">
+            <div class="phase-number">1</div>
+            <div>
+                <div class="phase-title">Water Comfort &amp; Safety</div>
+                <div class="phase-subtitle">Goal: Overcome fear, become comfortable in water</div>
+            </div>
+            <div class="phase-duration">Weeks 1-3</div>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress-fill" style="width: 15%; background: var(--level-beginner);"></div>
+        </div>
+
+        <div class="week-block">
+            <h3>Week 1: Getting In &amp; Water Familiarization</h3>
+            <div class="skills-grid">
+                <div class="skill-item">Enter and exit the pool safely (ladder, steps)</div>
+                <div class="skill-item">Walk in waist-deep water comfortably</div>
+                <div class="skill-item">Submerge face in water (eyes open with goggles)</div>
+                <div class="skill-item">Blow bubbles with mouth and nose underwater</div>
+                <div class="skill-item">Bob up and down (chin to forehead underwater)</div>
+                <div class="skill-item">Hold the pool wall and kick gently</div>
+            </div>
+            <div class="drill-box">
+                <h4>Practice (20-30 min, 3-4x per week)</h4>
+                <ul>
+                    <li>Bobbing: 20 bobs &mdash; inhale above water, exhale through nose underwater</li>
+                    <li>Face submersion: hold for 3 seconds, build to 10 seconds</li>
+                    <li>Wall kicks: hold gutter, body horizontal, flutter kick 30 seconds</li>
+                    <li>Walk the width of the pool and back (shallow end only)</li>
+                </ul>
+            </div>
+            <div class="resources-section">
+                <h4>Watch These Tutorials:</h4>
+                <div class="resource-links">
+                    <a href="https://www.youtube.com/results?search_query=overcome+fear+of+water+swimming+beginner" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Overcome Water Fear</a>
+                    <a href="https://www.youtube.com/results?search_query=swimming+breathing+bubbles+beginner" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Breathing Basics</a>
+                    <a href="https://www.youtube.com/results?search_query=நீச்சல்+பயம்+போக்க+tips+tamil" target="_blank" class="resource-link tamil"><span class="icon">&#9654;</span> நீச்சல் பயம் போக்க (Tamil)</a>
+                    <a href="https://www.youtube.com/results?search_query=learn+swimming+first+day+beginner" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> First Day in Pool</a>
+                </div>
+            </div>
+
+            <div class="tip-callout">
+                <strong>Key Mindset:</strong> Fear of water is completely normal. Go at YOUR pace. The goal this week is simply to feel relaxed in the water, not to swim. Spend as long as you need here before moving on.
+            </div>
+        </div>
+
+        <div class="week-block">
+            <h3>Week 2: Submersion &amp; Breath Control</h3>
+            <div class="skills-grid">
+                <div class="skill-item">Full head submersion for 5-10 seconds</div>
+                <div class="skill-item">Open eyes underwater with goggles</div>
+                <div class="skill-item">Rhythmic breathing: inhale mouth, exhale nose underwater</div>
+                <div class="skill-item">Pick up objects from pool floor (shallow end)</div>
+                <div class="skill-item">Push off wall and glide (with face in water)</div>
+                <div class="skill-item">Seated jump into chest-deep water</div>
+            </div>
+            <div class="drill-box">
+                <h4>Practice</h4>
+                <ul>
+                    <li>Rhythmic bobbing: 30 bobs with proper inhale/exhale timing</li>
+                    <li>Mushroom float: tuck knees to chest, float face-down for 5 seconds</li>
+                    <li>Wall push-off glide: push, streamline arms, glide until you stop (face in water)</li>
+                    <li>Treasure hunt: retrieve 3-5 objects from shallow pool floor</li>
+                </ul>
+            </div>
+            <div class="resources-section">
+                <h4>Watch These Tutorials:</h4>
+                <div class="resource-links">
+                    <a href="https://www.youtube.com/results?search_query=swimming+breath+control+drill+beginner" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Breath Control Drills</a>
+                    <a href="https://www.youtube.com/results?search_query=push+off+wall+glide+swimming" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Push &amp; Glide</a>
+                    <a href="https://www.youtube.com/results?search_query=swimming+lessons+for+beginners+tamil" target="_blank" class="resource-link tamil"><span class="icon">&#9654;</span> Beginner Lessons (Tamil)</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="week-block">
+            <h3>Week 3: Floating &amp; Body Position</h3>
+            <div class="skills-grid">
+                <div class="skill-item">Front float (starfish) &mdash; 10 seconds unsupported</div>
+                <div class="skill-item">Back float &mdash; 10 seconds unsupported</div>
+                <div class="skill-item">Recovery from float to standing position</div>
+                <div class="skill-item">Streamline position (arms overhead, body straight)</div>
+                <div class="skill-item">Glide on front with kick (5 meters)</div>
+                <div class="skill-item">Glide on back with kick (5 meters)</div>
+            </div>
+            <div class="drill-box">
+                <h4>Practice</h4>
+                <ul>
+                    <li>Starfish float: arms and legs spread, relax completely, 10-15 seconds</li>
+                    <li>Back float: ears in water, hips up, eyes to ceiling, relax 15 seconds</li>
+                    <li>Glide + kick: push off wall, streamline, add flutter kick for 5m</li>
+                    <li>Float recovery: from front float, tuck knees, press down hands, stand up</li>
+                </ul>
+            </div>
+            <div class="resources-section">
+                <h4>Watch These Tutorials:</h4>
+                <div class="resource-links">
+                    <a href="https://www.youtube.com/results?search_query=how+to+float+on+back+swimming+beginner" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Back Float Tutorial</a>
+                    <a href="https://www.youtube.com/results?search_query=how+to+float+swimming+front+starfish" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Front Float</a>
+                    <a href="https://www.youtube.com/results?search_query=streamline+position+swimming+technique" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Streamline Position</a>
+                    <a href="https://www.youtube.com/results?search_query=நீச்சல்+மிதப்பது+எப்படி+floating+tamil" target="_blank" class="resource-link tamil"><span class="icon">&#9654;</span> மிதப்பது எப்படி (Tamil)</a>
+                </div>
+            </div>
+
+            <div class="tip-callout">
+                <strong>Floating Secret:</strong> The key to floating is RELAXATION. Tense muscles sink. Fill your lungs (they're your built-in life jacket), look up at the ceiling for back float, and let your body do the work. It may take several sessions &mdash; that's normal.
+            </div>
+        </div>
+
+        <div class="milestone-box">
+            <h4>Phase 1 Milestone Checklist</h4>
+            <ul>
+                <li>Comfortable putting entire face/head underwater for 10+ seconds</li>
+                <li>Can blow bubbles continuously through nose while submerged</li>
+                <li>Float on front and back for 10 seconds without assistance</li>
+                <li>Push off wall and glide 3-5 meters in streamline</li>
+                <li>No panic response when water touches face</li>
+                <li>Can recover from float to standing safely</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- PHASE 2 -->
+    <div class="phase" id="phase2">
+        <div class="phase-header">
+            <div class="phase-number">2</div>
+            <div>
+                <div class="phase-title">Kicking &amp; Breathing Foundation</div>
+                <div class="phase-subtitle">Goal: Propulsion + rhythmic breathing</div>
+            </div>
+            <div class="phase-duration">Weeks 4-6</div>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress-fill" style="width: 30%; background: var(--level-beginner);"></div>
+        </div>
+
+        <div class="week-block">
+            <h3>Week 4: Flutter Kick Mastery</h3>
+            <div class="skills-grid">
+                <div class="skill-item">Flutter kick technique (from hips, not knees)</div>
+                <div class="skill-item">Kick with kickboard &mdash; 25m without stopping</div>
+                <div class="skill-item">Kick on back (arms at side) &mdash; 25m</div>
+                <div class="skill-item">Kick tempo: small, fast kicks (not big splashy ones)</div>
+                <div class="skill-item">Maintain horizontal body position while kicking</div>
+                <div class="skill-item">Kick without kickboard (arms in streamline)</div>
+            </div>
+            <div class="drill-box">
+                <h4>Practice (30-40 min, 3-4x per week)</h4>
+                <ul>
+                    <li>Kickboard lengths: 4 x 25m with 30-second rest between</li>
+                    <li>Back kick: 4 x 25m, arms at sides, face up, gentle kick</li>
+                    <li>Vertical kicking: in deep end (if comfortable), kick to stay afloat 30 seconds</li>
+                    <li>Streamline kick (no board): push off, arms forward, kick 10-15m</li>
+                </ul>
+            </div>
+            <div class="resources-section">
+                <h4>Watch These Tutorials:</h4>
+                <div class="resource-links">
+                    <a href="https://www.youtube.com/results?search_query=flutter+kick+technique+swimming+beginner" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Flutter Kick Technique</a>
+                    <a href="https://www.youtube.com/results?search_query=swimming+kick+from+hips+not+knees" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Kick From Hips</a>
+                    <a href="https://www.youtube.com/results?search_query=kickboard+drill+swimming+beginner" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Kickboard Drills</a>
+                    <a href="https://www.youtube.com/results?search_query=நீச்சல்+கால்+அடிப்பது+flutter+kick+tamil" target="_blank" class="resource-link tamil"><span class="icon">&#9654;</span> Flutter Kick (Tamil)</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="week-block">
+            <h3>Week 5: Side Breathing</h3>
+            <div class="skills-grid">
+                <div class="skill-item">Exhale underwater continuously (not holding breath)</div>
+                <div class="skill-item">Turn head to side to inhale (one goggle in, one out)</div>
+                <div class="skill-item">Breathing timing with kick (breathe every 3-4 kicks)</div>
+                <div class="skill-item">Practice on both sides (bilateral breathing)</div>
+                <div class="skill-item">Avoid lifting head forward to breathe</div>
+                <div class="skill-item">Combine: kick + side breathing for 10m</div>
+            </div>
+            <div class="drill-box">
+                <h4>Practice</h4>
+                <ul>
+                    <li>Side breathing at wall: hold wall, face in water, rotate head to breathe, repeat 20x</li>
+                    <li>Kickboard one-arm: hold board with one arm, other at side, breathe to free side</li>
+                    <li>6-3-6 drill: 6 kicks on side (face in), 3 strokes, 6 kicks on other side</li>
+                    <li>Walk and breathe: walk in shallow water, practice head-turn rhythm</li>
+                </ul>
+            </div>
+            <div class="resources-section">
+                <h4>Watch These Tutorials:</h4>
+                <div class="resource-links">
+                    <a href="https://www.youtube.com/results?search_query=swimming+side+breathing+technique+beginner" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Side Breathing</a>
+                    <a href="https://www.youtube.com/results?search_query=bilateral+breathing+swimming+drill" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Bilateral Breathing</a>
+                    <a href="https://www.youtube.com/results?search_query=swimming+breathing+mistakes+common" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Breathing Mistakes</a>
+                    <a href="https://www.youtube.com/results?search_query=நீச்சல்+மூச்சு+பயிற்சி+swimming+breathing+tamil" target="_blank" class="resource-link tamil"><span class="icon">&#9654;</span> மூச்சு பயிற்சி (Tamil)</a>
+                </div>
+            </div>
+
+            <div class="safety-callout">
+                <strong>Common Mistake:</strong> Holding your breath underwater causes CO2 buildup and panic. ALWAYS exhale continuously through your nose when your face is in the water. Inhale only when you turn your head to the side.
+            </div>
+        </div>
+
+        <div class="week-block">
+            <h3>Week 6: Arm Movements Introduction</h3>
+            <div class="skills-grid">
+                <div class="skill-item">Freestyle arm entry: fingertips first, shoulder width</div>
+                <div class="skill-item">Catch phase: hand angles down, elbow high</div>
+                <div class="skill-item">Pull phase: pull water past hip</div>
+                <div class="skill-item">Recovery: elbow leads, relaxed arm over water</div>
+                <div class="skill-item">Single-arm drill with kickboard</div>
+                <div class="skill-item">Doggy paddle to freestyle transition</div>
+            </div>
+            <div class="drill-box">
+                <h4>Practice</h4>
+                <ul>
+                    <li>Single-arm freestyle: kickboard in one hand, stroke with other, 4 x 25m each side</li>
+                    <li>Catch-up drill: both arms forward, one strokes while other waits at front</li>
+                    <li>Standing arm circles: practice arm motion on land, visualize entry and pull</li>
+                    <li>Pull buoy freestyle arms only: isolate upper body, 4 x 25m</li>
+                </ul>
+            </div>
+            <div class="resources-section">
+                <h4>Watch These Tutorials:</h4>
+                <div class="resource-links">
+                    <a href="https://www.youtube.com/results?search_query=freestyle+arm+technique+swimming+beginner" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Freestyle Arms</a>
+                    <a href="https://www.youtube.com/results?search_query=high+elbow+catch+swimming+drill" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> High Elbow Catch</a>
+                    <a href="https://www.youtube.com/results?search_query=catch+up+drill+freestyle+swimming" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Catch-Up Drill</a>
+                    <a href="https://www.youtube.com/results?search_query=freestyle+hand+entry+swimming+technique" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Hand Entry</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="milestone-box">
+            <h4>Phase 2 Milestone Checklist</h4>
+            <ul>
+                <li>Can kick 25m with kickboard without stopping</li>
+                <li>Rhythmic side breathing is natural (no panic, no lifting head)</li>
+                <li>Understand and can demonstrate freestyle arm motion</li>
+                <li>Can combine kick + breathing for 10-15 meters</li>
+                <li>Back kick for 25m comfortably</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- PHASE 3 -->
+    <div class="phase" id="phase3">
+        <div class="phase-header">
+            <div class="phase-number">3</div>
+            <div>
+                <div class="phase-title">Freestyle (Front Crawl)</div>
+                <div class="phase-subtitle">Goal: Swim 50-100m continuous freestyle</div>
+            </div>
+            <div class="phase-duration">Weeks 7-11</div>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress-fill" style="width: 50%; background: var(--level-intermediate);"></div>
+        </div>
+
+        <div class="week-block">
+            <h3>Weeks 7-8: Putting It All Together</h3>
+            <div class="skills-grid">
+                <div class="skill-item">Full freestyle: arms + kick + breathing combined</div>
+                <div class="skill-item">Breathing every 3 strokes (bilateral)</div>
+                <div class="skill-item">Body rotation (hips and shoulders roll together)</div>
+                <div class="skill-item">Swim 25m freestyle without stopping</div>
+                <div class="skill-item">Streamline push-off at each wall</div>
+                <div class="skill-item">Pacing: swim at 60% effort, not sprinting</div>
+            </div>
+            <div class="drill-box">
+                <h4>Practice (40-45 min, 3-4x per week)</h4>
+                <ul>
+                    <li>Warm-up: 4 x 25m kick (with board)</li>
+                    <li>Main set: 8 x 25m freestyle with 20-second rest (focus on one element each rep)</li>
+                    <li>Drill: 4 x 25m catch-up or fingertip drag</li>
+                    <li>Cool-down: 100m easy backstroke kick</li>
+                </ul>
+            </div>
+            <div class="resources-section">
+                <h4>Watch These Tutorials:</h4>
+                <div class="resource-links">
+                    <a href="https://www.youtube.com/results?search_query=freestyle+swimming+technique+full+stroke" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Full Freestyle</a>
+                    <a href="https://www.youtube.com/results?search_query=body+rotation+freestyle+swimming" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Body Rotation</a>
+                    <a href="https://www.youtube.com/results?search_query=skills+nt+freestyle+technique" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Skills NT: Freestyle</a>
+                    <a href="https://www.youtube.com/results?search_query=freestyle+நீச்சல்+கற்றுக்கொள்ள+tamil" target="_blank" class="resource-link tamil"><span class="icon">&#9654;</span> Freestyle (Tamil)</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="week-block">
+            <h3>Weeks 9-10: Building Distance &amp; Efficiency</h3>
+            <div class="skills-grid">
+                <div class="skill-item">Swim 50m continuous (2 lengths) freestyle</div>
+                <div class="skill-item">Reduce stroke count per length (efficiency)</div>
+                <div class="skill-item">Open turn at the wall (touch, turn, push off)</div>
+                <div class="skill-item">Maintain form when tired</div>
+                <div class="skill-item">Fingertip drag drill (high elbow recovery)</div>
+                <div class="skill-item">Swim 100m with short rests at walls</div>
+            </div>
+            <div class="drill-box">
+                <h4>Practice</h4>
+                <ul>
+                    <li>Build set: 25m easy, 25m moderate, 25m strong, 25m easy &mdash; repeat 2x</li>
+                    <li>Stroke counting: count strokes per 25m, try to reduce by 1-2 each week</li>
+                    <li>Fingertip drag: 4 x 25m (forces high elbow recovery)</li>
+                    <li>Continuous swim: aim for 100m (take 10-sec rest at walls if needed)</li>
+                </ul>
+            </div>
+            <div class="resources-section">
+                <h4>Watch These Tutorials:</h4>
+                <div class="resource-links">
+                    <a href="https://www.youtube.com/results?search_query=swim+longer+distances+freestyle+endurance" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Build Endurance</a>
+                    <a href="https://www.youtube.com/results?search_query=reduce+stroke+count+freestyle+efficiency" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Stroke Efficiency</a>
+                    <a href="https://www.youtube.com/results?search_query=fingertip+drag+drill+freestyle" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Fingertip Drag Drill</a>
+                    <a href="https://www.youtube.com/results?search_query=open+turn+swimming+technique" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Open Turn</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="week-block">
+            <h3>Week 11: Freestyle Refinement</h3>
+            <div class="skills-grid">
+                <div class="skill-item">Swim 200m continuous freestyle</div>
+                <div class="skill-item">Two-beat kick vs. six-beat kick understanding</div>
+                <div class="skill-item">Hand entry: avoid crossing center line</div>
+                <div class="skill-item">Head position: look at pool bottom, not forward</div>
+                <div class="skill-item">Relaxed recovery arm (not tense/stiff)</div>
+                <div class="skill-item">Even pacing across multiple lengths</div>
+            </div>
+            <div class="drill-box">
+                <h4>Practice</h4>
+                <ul>
+                    <li>Warm-up: 200m mixed (kick, pull, swim)</li>
+                    <li>Technique focus: 6 x 50m freestyle, alternate drill/swim by 25</li>
+                    <li>Continuous swim: 200m at conversational pace</li>
+                    <li>Cool-down: 100m easy choice</li>
+                    <li>Total session volume: 600-800m</li>
+                </ul>
+            </div>
+            <div class="resources-section">
+                <h4>Watch These Tutorials:</h4>
+                <div class="resource-links">
+                    <a href="https://www.youtube.com/results?search_query=freestyle+common+mistakes+fix" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Common Mistakes</a>
+                    <a href="https://www.youtube.com/results?search_query=two+beat+kick+vs+six+beat+kick" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> 2-Beat vs 6-Beat Kick</a>
+                    <a href="https://www.youtube.com/results?search_query=head+position+freestyle+swimming" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Head Position</a>
+                    <a href="https://www.instagram.com/explore/tags/freestyleswimming/" target="_blank" class="resource-link instagram"><span class="icon">&#128247;</span> #FreestyleSwimming</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="weekly-schedule">
+            <h4>Suggested Weekly Schedule (Phase 3)</h4>
+            <div class="schedule-grid">
+                <div class="schedule-day"><strong>Mon</strong>Technique drills 40min</div>
+                <div class="schedule-day"><strong>Tue</strong>Rest / Dry-land stretch</div>
+                <div class="schedule-day"><strong>Wed</strong>Endurance swim 45min</div>
+                <div class="schedule-day"><strong>Thu</strong>Rest / Watch videos</div>
+                <div class="schedule-day"><strong>Fri</strong>Mixed drill + swim 40min</div>
+                <div class="schedule-day"><strong>Sat</strong>Long continuous swim</div>
+                <div class="schedule-day"><strong>Sun</strong>Rest</div>
+            </div>
+        </div>
+
+        <div class="milestone-box">
+            <h4>Phase 3 Milestone Checklist</h4>
+            <ul>
+                <li>Swim 200m continuous freestyle without stopping</li>
+                <li>Bilateral breathing (every 3 strokes) is comfortable</li>
+                <li>Stroke count is under 20 per 25m</li>
+                <li>Can do open turns efficiently at each wall</li>
+                <li>No longer feel "out of breath" after 50m</li>
+                <li>Body stays horizontal (hips don't sink)</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- PHASE 4 -->
+    <div class="phase" id="phase4">
+        <div class="phase-header">
+            <div class="phase-number">4</div>
+            <div>
+                <div class="phase-title">Backstroke &amp; Breaststroke</div>
+                <div class="phase-subtitle">Goal: Two additional strokes, 400m+ sessions</div>
+            </div>
+            <div class="phase-duration">Weeks 12-17</div>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress-fill" style="width: 70%; background: var(--level-intermediate);"></div>
+        </div>
+
+        <div class="week-block">
+            <h3>Weeks 12-14: Backstroke</h3>
+            <div class="skills-grid">
+                <div class="skill-item">Back float with flutter kick (relaxed, face up)</div>
+                <div class="skill-item">Backstroke arm technique: pinky enters first</div>
+                <div class="skill-item">Alternating arm recovery (straight arm over)</div>
+                <div class="skill-item">Body rotation on backstroke (shoulder roll)</div>
+                <div class="skill-item">Head position: still, looking straight up</div>
+                <div class="skill-item">Backstroke flags awareness (5m from wall)</div>
+                <div class="skill-item">Backstroke turn (roll to front, open turn)</div>
+                <div class="skill-item">Swim 50m continuous backstroke</div>
+            </div>
+            <div class="drill-box">
+                <h4>Practice</h4>
+                <ul>
+                    <li>Single arm backstroke: one arm at side, other strokes, 4 x 25m each</li>
+                    <li>6-kick switch: 6 kicks on one side, switch arms, 6 kicks other side</li>
+                    <li>Cup of water drill: balance imaginary cup on forehead (head still)</li>
+                    <li>Full backstroke: 6 x 25m with focus on smooth entry and rotation</li>
+                    <li>Mixed set: 25m freestyle + 25m backstroke, 4 rounds</li>
+                </ul>
+            </div>
+            <div class="resources-section">
+                <h4>Watch These Tutorials:</h4>
+                <div class="resource-links">
+                    <a href="https://www.youtube.com/results?search_query=backstroke+technique+beginner+tutorial" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Backstroke Basics</a>
+                    <a href="https://www.youtube.com/results?search_query=backstroke+arm+technique+pinky+entry" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Arm Technique</a>
+                    <a href="https://www.youtube.com/results?search_query=backstroke+body+rotation+drill" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Body Rotation</a>
+                    <a href="https://www.youtube.com/results?search_query=backstroke+நீச்சல்+tamil+technique" target="_blank" class="resource-link tamil"><span class="icon">&#9654;</span> Backstroke (Tamil)</a>
+                    <a href="https://www.instagram.com/explore/tags/backstroke/" target="_blank" class="resource-link instagram"><span class="icon">&#128247;</span> #Backstroke</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="week-block">
+            <h3>Weeks 15-17: Breaststroke</h3>
+            <div class="skills-grid">
+                <div class="skill-item">Breaststroke kick (whip kick / frog kick)</div>
+                <div class="skill-item">Kick timing: heels to butt, turn feet out, snap together</div>
+                <div class="skill-item">Arm pull: heart-shaped pull, elbows stay forward</div>
+                <div class="skill-item">Timing: pull, breathe, kick, glide</div>
+                <div class="skill-item">Glide phase (streamline between strokes)</div>
+                <div class="skill-item">Head position: forward breathing (not lifting high)</div>
+                <div class="skill-item">Breaststroke pullout (underwater after turn)</div>
+                <div class="skill-item">Swim 50m continuous breaststroke</div>
+            </div>
+            <div class="drill-box">
+                <h4>Practice</h4>
+                <ul>
+                    <li>Kick on back (hands on knees): practice whip kick motion, 4 x 25m</li>
+                    <li>2 kicks + 1 pull: extra glide phase, feel the timing</li>
+                    <li>Breaststroke arms with flutter kick: isolate arm motion, 4 x 25m</li>
+                    <li>Full breaststroke with long glide: count strokes (aim for under 8 per 25m)</li>
+                    <li>Breaststroke pullout: push off wall, 1 pull + 1 kick underwater before surfacing</li>
+                </ul>
+            </div>
+            <div class="resources-section">
+                <h4>Watch These Tutorials:</h4>
+                <div class="resource-links">
+                    <a href="https://www.youtube.com/results?search_query=breaststroke+kick+technique+whip+kick" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Breaststroke Kick</a>
+                    <a href="https://www.youtube.com/results?search_query=breaststroke+timing+pull+breathe+kick+glide" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Timing &amp; Glide</a>
+                    <a href="https://www.youtube.com/results?search_query=breaststroke+technique+common+mistakes" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Common Mistakes</a>
+                    <a href="https://www.youtube.com/results?search_query=breaststroke+pullout+underwater" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Pullout Technique</a>
+                    <a href="https://www.youtube.com/results?search_query=breaststroke+நீச்சல்+தவளை+நீச்சல்+tamil" target="_blank" class="resource-link tamil"><span class="icon">&#9654;</span> தவளை நீச்சல் (Tamil)</a>
+                </div>
+            </div>
+
+            <div class="tip-callout">
+                <strong>Breaststroke Key:</strong> The power comes from the KICK, not the arms. The arm pull is just for breathing and a little forward motion. Focus on a strong whip kick and a long glide. "Pull, Breathe, Kick, Gliiiiide."
+            </div>
+        </div>
+
+        <div class="milestone-box">
+            <h4>Phase 4 Milestone Checklist</h4>
+            <ul>
+                <li>Swim 50m backstroke with proper rotation and steady head</li>
+                <li>Swim 50m breaststroke with correct whip kick timing</li>
+                <li>Total session volume: 800-1200m</li>
+                <li>Can swim 400m mixing freestyle, backstroke, and breaststroke</li>
+                <li>Comfortable swimming in the deep end for extended periods</li>
+                <li>Understanding of each stroke's timing and rhythm</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- PHASE 5 -->
+    <div class="phase" id="phase5">
+        <div class="phase-header">
+            <div class="phase-number">5</div>
+            <div>
+                <div class="phase-title">Butterfly &amp; Endurance</div>
+                <div class="phase-subtitle">Goal: All 4 strokes, 1000m+ sessions</div>
+            </div>
+            <div class="phase-duration">Weeks 18-24</div>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress-fill" style="width: 85%; background: var(--level-advanced);"></div>
+        </div>
+
+        <div class="week-block">
+            <h3>Weeks 18-20: Butterfly Stroke</h3>
+            <div class="skills-grid">
+                <div class="skill-item">Dolphin kick: undulation from chest, not knees</div>
+                <div class="skill-item">Body wave: chest press down, hips rise</div>
+                <div class="skill-item">Butterfly arm recovery: both arms over simultaneously</div>
+                <div class="skill-item">Timing: 2 kicks per arm cycle (kick on entry, kick on pull)</div>
+                <div class="skill-item">Breathing: forward (chin on water surface)</div>
+                <div class="skill-item">Swim 25m butterfly (even if exhausting)</div>
+            </div>
+            <div class="drill-box">
+                <h4>Practice</h4>
+                <ul>
+                    <li>Dolphin kick on front: arms at sides, undulate 4 x 25m</li>
+                    <li>Dolphin kick underwater: streamline, 3-5 kicks off each wall</li>
+                    <li>Single arm butterfly: one arm strokes, other at side, dolphin kick</li>
+                    <li>3-3-3 drill: 3 strokes right arm, 3 strokes left arm, 3 full butterfly</li>
+                    <li>Full butterfly: 4 x 25m (rest as long as needed between)</li>
+                </ul>
+            </div>
+            <div class="resources-section">
+                <h4>Watch These Tutorials:</h4>
+                <div class="resource-links">
+                    <a href="https://www.youtube.com/results?search_query=butterfly+stroke+technique+beginner+learn" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Butterfly Basics</a>
+                    <a href="https://www.youtube.com/results?search_query=dolphin+kick+technique+undulation" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Dolphin Kick</a>
+                    <a href="https://www.youtube.com/results?search_query=butterfly+timing+two+kicks+one+pull" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Butterfly Timing</a>
+                    <a href="https://www.youtube.com/results?search_query=butterfly+drills+single+arm" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Single Arm Drill</a>
+                    <a href="https://www.youtube.com/results?search_query=butterfly+stroke+நீச்சல்+tamil" target="_blank" class="resource-link tamil"><span class="icon">&#9654;</span> Butterfly (Tamil)</a>
+                </div>
+            </div>
+
+            <div class="tip-callout">
+                <strong>Butterfly Reality Check:</strong> Butterfly is the hardest stroke and the most tiring. It's NORMAL to only manage 25m at first. Focus on the rhythm and undulation, not speed. Many accomplished swimmers only swim butterfly in short bursts.
+            </div>
+        </div>
+
+        <div class="week-block">
+            <h3>Weeks 21-22: Individual Medley (IM) &amp; Flip Turns</h3>
+            <div class="skills-grid">
+                <div class="skill-item">Swim a 100m IM (25 fly, 25 back, 25 breast, 25 free)</div>
+                <div class="skill-item">Freestyle flip turn (somersault at wall)</div>
+                <div class="skill-item">Backstroke flip turn</div>
+                <div class="skill-item">Transition between strokes (IM turns)</div>
+                <div class="skill-item">Underwater streamline off each wall (3-5m)</div>
+                <div class="skill-item">Swim 200m IM</div>
+            </div>
+            <div class="drill-box">
+                <h4>Practice</h4>
+                <ul>
+                    <li>Flip turn progression: somersault in middle of pool, then near wall, then with push-off</li>
+                    <li>Approach drill: swim into wall, flip, push off in streamline</li>
+                    <li>100 IM: focus on smooth transitions between strokes</li>
+                    <li>200 IM build: increase IM distance over 2 weeks</li>
+                </ul>
+            </div>
+            <div class="resources-section">
+                <h4>Watch These Tutorials:</h4>
+                <div class="resource-links">
+                    <a href="https://www.youtube.com/results?search_query=freestyle+flip+turn+tutorial+beginner" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Flip Turn Tutorial</a>
+                    <a href="https://www.youtube.com/results?search_query=individual+medley+IM+transitions" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> IM Transitions</a>
+                    <a href="https://www.youtube.com/results?search_query=backstroke+flip+turn+technique" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Backstroke Flip Turn</a>
+                    <a href="https://www.youtube.com/results?search_query=underwater+streamline+off+wall+swimming" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Underwater Push-Off</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="week-block">
+            <h3>Weeks 23-24: Endurance Building</h3>
+            <div class="skills-grid">
+                <div class="skill-item">Swim 1000m continuous (mix of strokes)</div>
+                <div class="skill-item">Pacing strategy: negative split (second half faster)</div>
+                <div class="skill-item">Interval training: 10 x 50m on a set time</div>
+                <div class="skill-item">Active recovery (easy 50m between hard sets)</div>
+                <div class="skill-item">Session structure: warm-up, main set, cool-down</div>
+                <div class="skill-item">Total session volume: 1500-2000m</div>
+            </div>
+            <div class="drill-box">
+                <h4>Sample Workout (1500m)</h4>
+                <ul>
+                    <li>Warm-up: 200m easy free + 100m kick + 100m drill</li>
+                    <li>Pre-set: 4 x 50m (25 drill + 25 swim) on 1:00</li>
+                    <li>Main set: 10 x 50m freestyle on 1:10 (aim consistent pace)</li>
+                    <li>Variety: 4 x 25m each stroke (100m fly, 100m back, 100m breast)</li>
+                    <li>Cool-down: 200m easy choice</li>
+                </ul>
+            </div>
+            <div class="resources-section">
+                <h4>Watch These Tutorials:</h4>
+                <div class="resource-links">
+                    <a href="https://www.youtube.com/results?search_query=swimming+endurance+training+beginner+intermediate" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Endurance Training</a>
+                    <a href="https://www.youtube.com/results?search_query=swimming+workout+structure+sets+intervals" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Workout Structure</a>
+                    <a href="https://www.youtube.com/results?search_query=myswimpro+beginner+intermediate+workout" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> MySwimPro Workouts</a>
+                    <a href="https://www.youtube.com/results?search_query=negative+split+swimming+pacing" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Pacing Strategy</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="milestone-box">
+            <h4>Phase 5 Milestone Checklist</h4>
+            <ul>
+                <li>Can swim all four strokes (even if butterfly is only 25-50m)</li>
+                <li>Swim 200m IM without stopping</li>
+                <li>Flip turns on freestyle and backstroke</li>
+                <li>1000m continuous swim (any stroke combination)</li>
+                <li>Session volume: 1500-2000m</li>
+                <li>Understand interval training and pacing</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- PHASE 6 -->
+    <div class="phase" id="phase6">
+        <div class="phase-header">
+            <div class="phase-number">6</div>
+            <div>
+                <div class="phase-title">Efficiency &amp; Open Water</div>
+                <div class="phase-subtitle">Goal: Refined technique, open water readiness</div>
+            </div>
+            <div class="phase-duration">Weeks 25-30</div>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress-fill" style="width: 100%; background: var(--level-advanced);"></div>
+        </div>
+
+        <div class="week-block">
+            <h3>Weeks 25-27: Technique Refinement</h3>
+            <div class="skills-grid">
+                <div class="skill-item">Freestyle: stroke rate vs. distance per stroke optimization</div>
+                <div class="skill-item">Early vertical forearm (EVF) catch</div>
+                <div class="skill-item">Streamlined push-offs: 5+ meters underwater</div>
+                <div class="skill-item">Reduce drag: tight streamline, pointed toes</div>
+                <div class="skill-item">Bilateral breathing every 3 or 5 strokes</div>
+                <div class="skill-item">Video analysis of your own stroke</div>
+            </div>
+            <div class="drill-box">
+                <h4>Practice</h4>
+                <ul>
+                    <li>SWOLF score: count strokes + time per 25m &mdash; try to lower the total</li>
+                    <li>Sculling drills: feel the water with hands at different positions</li>
+                    <li>Tarzan drill (head-up freestyle): builds catch strength</li>
+                    <li>Fist drill: swim with closed fists (improves forearm catch)</li>
+                    <li>Record yourself: use a waterproof camera or ask someone poolside</li>
+                </ul>
+            </div>
+            <div class="resources-section">
+                <h4>Watch These Tutorials:</h4>
+                <div class="resource-links">
+                    <a href="https://www.youtube.com/results?search_query=early+vertical+forearm+freestyle+swimming" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> EVF Catch</a>
+                    <a href="https://www.youtube.com/results?search_query=swim+faster+freestyle+reduce+drag" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Reduce Drag</a>
+                    <a href="https://www.youtube.com/results?search_query=sculling+drill+swimming+feel+water" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Sculling Drills</a>
+                    <a href="https://www.youtube.com/results?search_query=effortless+swimming+stroke+analysis" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Stroke Analysis</a>
+                    <a href="https://www.youtube.com/results?search_query=SWOLF+score+swimming+efficiency" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> SWOLF Explained</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="week-block">
+            <h3>Weeks 28-30: Open Water Skills &amp; Confidence</h3>
+            <div class="skills-grid">
+                <div class="skill-item">Sighting: head-up look every 6-8 strokes</div>
+                <div class="skill-item">Swimming without walls (no push-offs to rest)</div>
+                <div class="skill-item">Treading water: 5+ minutes continuously</div>
+                <div class="skill-item">Swimming in a straight line without lane markers</div>
+                <div class="skill-item">Dealing with waves/chop (if practicing in open water)</div>
+                <div class="skill-item">Wetsuit swimming (different buoyancy)</div>
+                <div class="skill-item">Continuous 2000m swim</div>
+                <div class="skill-item">Basic water rescue awareness (reach, throw, don't go)</div>
+            </div>
+            <div class="drill-box">
+                <h4>Practice</h4>
+                <ul>
+                    <li>Sighting drill in pool: head-up freestyle every 8 strokes, maintain pace</li>
+                    <li>Treading water: mix egg-beater kick and sculling for 5 minutes</li>
+                    <li>Swim without touching walls: turn before the wall (simulates open water)</li>
+                    <li>Open water (supervised): swim along shore, with buddy, in calm conditions</li>
+                    <li>Distance build: weekly long swim increasing to 2000m continuous</li>
+                </ul>
+            </div>
+            <div class="resources-section">
+                <h4>Watch These Tutorials:</h4>
+                <div class="resource-links">
+                    <a href="https://www.youtube.com/results?search_query=open+water+swimming+beginner+tips" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Open Water Tips</a>
+                    <a href="https://www.youtube.com/results?search_query=sighting+open+water+swimming+technique" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Sighting Technique</a>
+                    <a href="https://www.youtube.com/results?search_query=treading+water+technique+easy+5+minutes" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Treading Water</a>
+                    <a href="https://www.youtube.com/results?search_query=pool+to+open+water+swimming+transition" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Pool to Open Water</a>
+                    <a href="https://www.youtube.com/results?search_query=open+water+swimming+safety+tips" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> OW Safety</a>
+                    <a href="https://www.instagram.com/explore/tags/openwaterswimming/" target="_blank" class="resource-link instagram"><span class="icon">&#128247;</span> #OpenWaterSwimming</a>
+                </div>
+            </div>
+
+            <div class="safety-callout">
+                <strong>Open Water Safety:</strong> NEVER swim in open water alone. Always swim parallel to shore, not away from it. Wear a bright swim buoy for visibility. Check conditions (currents, temperature, jellyfish) before entering. Start in calm, shallow, supervised areas.
+            </div>
+        </div>
+
+        <div class="weekly-schedule">
+            <h4>Suggested Weekly Schedule (Phase 6)</h4>
+            <div class="schedule-grid">
+                <div class="schedule-day"><strong>Mon</strong>Technique 60min (drills focus)</div>
+                <div class="schedule-day"><strong>Tue</strong>Dry-land / Strength</div>
+                <div class="schedule-day"><strong>Wed</strong>Intervals 60min</div>
+                <div class="schedule-day"><strong>Thu</strong>Rest / Mobility</div>
+                <div class="schedule-day"><strong>Fri</strong>Mixed strokes 60min</div>
+                <div class="schedule-day"><strong>Sat</strong>Long distance swim</div>
+                <div class="schedule-day"><strong>Sun</strong>Rest or easy swim</div>
+            </div>
+        </div>
+
+        <div class="milestone-box">
+            <h4>Phase 6 &mdash; You're a Confident Swimmer When:</h4>
+            <ul>
+                <li>Swim 2000m continuous without difficulty</li>
+                <li>All four strokes are comfortable and efficient</li>
+                <li>Flip turns are automatic on freestyle and backstroke</li>
+                <li>Can tread water for 5+ minutes</li>
+                <li>Comfortable in deep water with no wall nearby</li>
+                <li>Can sight and swim straight without lane markers</li>
+                <li>Session volume: 2000-3000m</li>
+                <li>Ready for open water swimming with proper safety measures</li>
+                <li>Could participate in a beginner triathlon swim leg (750m)</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Principles Section -->
+    <div class="equipment-section">
+        <h2>Key Principles Throughout Your Journey</h2>
+        <div class="equipment-grid">
+            <div class="equipment-card">
+                <div class="emoji">&#128168;</div>
+                <h4>Exhale Underwater</h4>
+                <p>The #1 beginner mistake is holding breath. Always blow out underwater, inhale above.</p>
+            </div>
+            <div class="equipment-card">
+                <div class="emoji">&#129494;</div>
+                <h4>Relax to Float</h4>
+                <p>Tension sinks you. The more relaxed you are, the better you float and swim.</p>
+            </div>
+            <div class="equipment-card">
+                <div class="emoji">&#128032;</div>
+                <h4>Smooth = Fast</h4>
+                <p>Reducing drag is more important than adding power. Glide more, splash less.</p>
+            </div>
+            <div class="equipment-card">
+                <div class="emoji">&#128200;</div>
+                <h4>Consistency Wins</h4>
+                <p>3-4 shorter sessions per week beats one long session. Frequency builds muscle memory.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Additional Resources -->
+    <div class="channel-directory">
+        <h2>Additional Free Resources</h2>
+        <div class="channel-list">
+            <div class="channel-card">
+                <h4>Swimming Workout Generator</h4>
+                <p>Free customized workouts by level</p>
+                <a href="https://www.myswimpro.com/" target="_blank">myswimpro.com</a>
+            </div>
+            <div class="channel-card">
+                <h4>USA Swimming Foundations</h4>
+                <p>Learn-to-swim program framework</p>
+                <a href="https://www.usaswimming.org/parents/learn-to-swim" target="_blank">usaswimming.org/learn-to-swim</a>
+            </div>
+            <div class="channel-card">
+                <h4>Swim Smooth</h4>
+                <p>Stroke analysis tools and technique guides</p>
+                <a href="https://www.swimsmooth.com/" target="_blank">swimsmooth.com</a>
+            </div>
+            <div class="channel-card">
+                <h4>r/Swimming</h4>
+                <p>Community advice, workout sharing, technique videos</p>
+                <a href="https://www.reddit.com/r/Swimming/" target="_blank">reddit.com/r/Swimming</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <p>Swimming Learning Program &mdash; Complete Beginner to Confident Swimmer</p>
+    <p style="margin-top: 0.5rem; font-size: 0.8rem;">Timeline assumes 3-4 pool sessions per week, 30-60 minutes each. Individual progress varies based on comfort with water, athletic background, and consistency. Always prioritize safety over speed of progression.</p>
+</footer>
+
+</body>
+</html>
