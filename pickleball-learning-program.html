@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pickleball: Beginner to 4.0 Learning Program</title>
+    <style>
+        :root {
+            --primary: #2d6a4f;
+            --primary-light: #40916c;
+            --accent: #f77f00;
+            --accent-light: #fcbf49;
+            --bg: #f8f9fa;
+            --card-bg: #ffffff;
+            --text: #212529;
+            --text-muted: #6c757d;
+            --border: #dee2e6;
+            --level-beginner: #74c69d;
+            --level-intermediate: #fca311;
+            --level-advanced: #e63946;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .rating-scale {
+            background: white;
+            color: var(--text);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem auto;
+            max-width: 700px;
+            text-align: left;
+        }
+
+        .rating-scale h3 {
+            margin-bottom: 0.75rem;
+            color: var(--primary);
+        }
+
+        .rating-scale ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .rating-scale li {
+            padding: 0.3rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .rating-scale li:last-child {
+            border-bottom: none;
+        }
+
+        .rating-scale .rating-num {
+            font-weight: 700;
+            color: var(--primary);
+            display: inline-block;
+            width: 40px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .phase {
+            margin-bottom: 3rem;
+        }
+
+        .phase-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 3px solid var(--primary);
+        }
+
+        .phase-number {
+            background: var(--primary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .phase-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .phase-subtitle {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .phase-duration {
+            margin-left: auto;
+            background: var(--accent-light);
+            color: #333;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .week-block {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            border-left: 4px solid var(--primary-light);
+        }
+
+        .week-block h3 {
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+            font-size: 1.15rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            .phase-header {
+                flex-wrap: wrap;
+            }
+            .phase-duration {
+                margin-left: 0;
+            }
+        }
+
+        .skill-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+
+        .skill-item::before {
+            content: "\\2713";
+            color: var(--primary);
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .drill-box {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 0.75rem;
+        }
+
+        .drill-box h4 {
+            color: var(--primary);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .drill-box ul {
+            padding-left: 1.2rem;
+            font-size: 0.9rem;
+        }
+
+        .drill-box li {
+            margin-bottom: 0.3rem;
+        }
+
+        .resources-section {
+            margin-top: 1rem;
+        }
+
+        .resources-section h4 {
+            color: var(--accent);
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .resource-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .resource-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            background: #fff3e0;
+            color: #e65100;
+            padding: 0.35rem 0.7rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+
+        .resource-link:hover {
+            background: #ffe0b2;
+        }
+
+        .resource-link.youtube {
+            background: #fce4ec;
+            color: #c62828;
+        }
+
+        .resource-link.youtube:hover {
+            background: #ffcdd2;
+        }
+
+        .resource-link.instagram {
+            background: #f3e5f5;
+            color: #6a1b9a;
+        }
+
+        .resource-link.instagram:hover {
+            background: #e1bee7;
+        }
+
+        .icon {
+            font-size: 1rem;
+        }
+
+        .milestone-box {
+            background: linear-gradient(135deg, #fff9c4, #fff59d);
+            border: 2px solid var(--accent);
+            border-radius: 10px;
+            padding: 1.2rem;
+            margin-top: 1rem;
+        }
+
+        .milestone-box h4 {
+            color: #e65100;
+            margin-bottom: 0.5rem;
+        }
+
+        .milestone-box ul {
+            padding-left: 1.2rem;
+            font-size: 0.9rem;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: var(--border);
+            border-radius: 4px;
+            margin: 1rem 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 0.3s;
+        }
+
+        .equipment-section {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+
+        .equipment-section h2 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .equipment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .equipment-card {
+            background: #f0fdf4;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .equipment-card .emoji {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .equipment-card h4 {
+            font-size: 0.95rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .equipment-card p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .tip-callout {
+            background: #e3f2fd;
+            border-left: 4px solid #1976d2;
+            border-radius: 0 8px 8px 0;
+            padding: 1rem;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+
+        .tip-callout strong {
+            color: #1565c0;
+        }
+
+        .channel-directory {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+
+        .channel-directory h2 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .channel-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+
+        .channel-card {
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1rem;
+        }
+
+        .channel-card h4 {
+            font-size: 0.95rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .channel-card p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+
+        .channel-card a {
+            color: var(--primary);
+            font-size: 0.85rem;
+            text-decoration: none;
+        }
+
+        .channel-card a:hover {
+            text-decoration: underline;
+        }
+
+        .weekly-schedule {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+
+        .weekly-schedule h4 {
+            font-size: 0.9rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 0.5rem;
+            font-size: 0.8rem;
+        }
+
+        .schedule-day {
+            background: white;
+            padding: 0.5rem;
+            border-radius: 6px;
+            text-align: center;
+            border: 1px solid var(--border);
+        }
+
+        .schedule-day strong {
+            display: block;
+            color: var(--primary);
+            margin-bottom: 0.2rem;
+        }
+
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        .toc {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+
+        .toc h2 {
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+            font-size: 1.2rem;
+        }
+
+        .toc ol {
+            padding-left: 1.5rem;
+        }
+
+        .toc li {
+            margin-bottom: 0.4rem;
+        }
+
+        .toc a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .toc a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Pickleball Learning Program</h1>
+    <p>A structured path from complete beginner to 4.0 rated player. Follow this step-by-step program with free video tutorials.</p>
+    <div class="rating-scale">
+        <h3>USAPA Rating Scale Reference</h3>
+        <ul>
+            <li><span class="rating-num">1.0</span> Just learned the rules, minimal experience</li>
+            <li><span class="rating-num">2.0</span> Can sustain short rallies, learning basic positioning</li>
+            <li><span class="rating-num">2.5</span> Consistent on basic shots, understands court positioning</li>
+            <li><span class="rating-num">3.0</span> Can place serves/returns, understands stacking & the kitchen</li>
+            <li><span class="rating-num">3.5</span> Consistent dinks, developing 3rd shot drops, strategic play</li>
+            <li><span class="rating-num">4.0</span> Controls pace, reliable drops & drives, smart shot selection</li>
+        </ul>
+    </div>
+</header>
+
+<div class="container">
+
+    <div class="toc">
+        <h2>Program Overview</h2>
+        <ol>
+            <li><a href="#phase1">Phase 1: Foundation (Weeks 1-3) &mdash; Rating: 1.0 &rarr; 2.0</a></li>
+            <li><a href="#phase2">Phase 2: Building Consistency (Weeks 4-7) &mdash; Rating: 2.0 &rarr; 2.5</a></li>
+            <li><a href="#phase3">Phase 3: Strategic Play (Weeks 8-12) &mdash; Rating: 2.5 &rarr; 3.0</a></li>
+            <li><a href="#phase4">Phase 4: Advanced Fundamentals (Weeks 13-18) &mdash; Rating: 3.0 &rarr; 3.5</a></li>
+            <li><a href="#phase5">Phase 5: Competitive Play (Weeks 19-26) &mdash; Rating: 3.5 &rarr; 4.0</a></li>
+        </ol>
+    </div>
+
+    <!-- Equipment Section -->
+    <div class="equipment-section">
+        <h2>Getting Started: Equipment</h2>
+        <div class="equipment-grid">
+            <div class="equipment-card">
+                <div class="emoji">&#127955;</div>
+                <h4>Paddle</h4>
+                <p>Start with a mid-weight (7.5-8.2 oz) composite paddle. Budget: $30-80 for beginners.</p>
+            </div>
+            <div class="equipment-card">
+                <div class="emoji">&#9898;</div>
+                <h4>Balls</h4>
+                <p>Outdoor: Dura Fast 40 or Franklin X-40. Indoor: Onix Fuse or Jugs.</p>
+            </div>
+            <div class="equipment-card">
+                <div class="emoji">&#128095;</div>
+                <h4>Court Shoes</h4>
+                <p>Tennis or volleyball shoes with lateral support. No running shoes!</p>
+            </div>
+            <div class="equipment-card">
+                <div class="emoji">&#128083;</div>
+                <h4>Accessories</h4>
+                <p>Sweatband, water bottle, overgrip tape. Sunglasses for outdoor play.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Channel Directory -->
+    <div class="channel-directory">
+        <h2>Recommended Free Tutorial Channels</h2>
+        <div class="channel-list">
+            <div class="channel-card">
+                <h4>Selkirk TV</h4>
+                <p>Pro tips, technique breakdowns, strategy guides</p>
+                <a href="https://www.youtube.com/@SelkirkTV" target="_blank">youtube.com/@SelkirkTV</a>
+            </div>
+            <div class="channel-card">
+                <h4>PrimeTime Pickleball</h4>
+                <p>Beginner-friendly fundamentals and drills</p>
+                <a href="https://www.youtube.com/@primetimepickleball" target="_blank">youtube.com/@primetimepickleball</a>
+            </div>
+            <div class="channel-card">
+                <h4>Briones Pickleball</h4>
+                <p>Strategy, positioning, and game analysis</p>
+                <a href="https://www.youtube.com/@brionespickleball" target="_blank">youtube.com/@brionespickleball</a>
+            </div>
+            <div class="channel-card">
+                <h4>The Pickleball Clinic</h4>
+                <p>Quick tips and common mistake fixes</p>
+                <a href="https://www.youtube.com/@thepickleballclinic" target="_blank">youtube.com/@thepickleballclinic</a>
+            </div>
+            <div class="channel-card">
+                <h4>Zane Navratil</h4>
+                <p>Pro player insights and advanced techniques</p>
+                <a href="https://www.youtube.com/@ZaneNavratilPickleball" target="_blank">youtube.com/@ZaneNavratilPickleball</a>
+            </div>
+            <div class="channel-card">
+                <h4>Tyson McGuffin</h4>
+                <p>Power play, drives, and competitive mindset</p>
+                <a href="https://www.youtube.com/@TysonMcGuffin" target="_blank">youtube.com/@TysonMcGuffin</a>
+            </div>
+            <div class="channel-card">
+                <h4>@pickleballkitchen (IG)</h4>
+                <p>Quick reels on tips, drills, and mistakes</p>
+                <a href="https://www.instagram.com/pickleballkitchen/" target="_blank">instagram.com/pickleballkitchen</a>
+            </div>
+            <div class="channel-card">
+                <h4>@thedinkpickleball (IG)</h4>
+                <p>News, highlights, and quick tutorials</p>
+                <a href="https://www.instagram.com/thedinkpickleball/" target="_blank">instagram.com/thedinkpickleball</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- PHASE 1 -->
+    <div class="phase" id="phase1">
+        <div class="phase-header">
+            <div class="phase-number">1</div>
+            <div>
+                <div class="phase-title">Foundation &mdash; Learn the Basics</div>
+                <div class="phase-subtitle">Rating Goal: 1.0 &rarr; 2.0</div>
+            </div>
+            <div class="phase-duration">Weeks 1-3</div>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress-fill" style="width: 20%; background: var(--level-beginner);"></div>
+        </div>
+
+        <div class="week-block">
+            <h3>Week 1: Rules, Grip & Basic Rally</h3>
+            <div class="skills-grid">
+                <div class="skill-item">Understand court dimensions and zones (kitchen/NVZ)</div>
+                <div class="skill-item">Learn scoring system (side-out scoring for doubles)</div>
+                <div class="skill-item">Continental grip (hammer grip)</div>
+                <div class="skill-item">Ready position and athletic stance</div>
+                <div class="skill-item">Basic forehand push/block</div>
+                <div class="skill-item">Basic backhand push/block</div>
+            </div>
+            <div class="drill-box">
+                <h4>Drills (30 min/session, 3x per week)</h4>
+                <ul>
+                    <li>Wall rallies: 50 consecutive forehand, then 50 backhand</li>
+                    <li>Self-feed and catch: toss ball up, let bounce, hit to target</li>
+                    <li>Partner rally from mid-court: just keep the ball in play</li>
+                </ul>
+            </div>
+            <div class="resources-section">
+                <h4>Watch These Tutorials:</h4>
+                <div class="resource-links">
+                    <a href="https://www.youtube.com/shorts?q=pickleball+rules+beginners" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Pickleball Rules in 60s</a>
+                    <a href="https://www.youtube.com/results?search_query=pickleball+continental+grip+short" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Grip Tutorial</a>
+                    <a href="https://www.youtube.com/results?search_query=pickleball+ready+position+beginner" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Ready Position</a>
+                    <a href="https://www.instagram.com/reel/pickleball+beginner+tips/" target="_blank" class="resource-link instagram"><span class="icon">&#128247;</span> Beginner Tips Reel</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="week-block">
+            <h3>Week 2: Serving & Return of Serve</h3>
+            <div class="skills-grid">
+                <div class="skill-item">Underhand serve (legal motion below waist)</div>
+                <div class="skill-item">Serve placement: deep to backhand</div>
+                <div class="skill-item">Return of serve: deep and centered</div>
+                <div class="skill-item">Two-bounce rule understanding</div>
+                <div class="skill-item">Transition after return (move forward)</div>
+                <div class="skill-item">Calling the score correctly</div>
+            </div>
+            <div class="drill-box">
+                <h4>Drills</h4>
+                <ul>
+                    <li>Serve to targets: place cones in deep corners, aim for 7/10 accuracy</li>
+                    <li>Return deep drill: partner serves, you return past the NVZ line</li>
+                    <li>Serve and move: serve, then practice split-step positioning</li>
+                </ul>
+            </div>
+            <div class="resources-section">
+                <h4>Watch These Tutorials:</h4>
+                <div class="resource-links">
+                    <a href="https://www.youtube.com/results?search_query=pickleball+serve+technique+beginner+short" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Serve Basics</a>
+                    <a href="https://www.youtube.com/results?search_query=pickleball+return+of+serve+tips" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Return of Serve</a>
+                    <a href="https://www.youtube.com/results?search_query=pickleball+two+bounce+rule+explained" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Two-Bounce Rule</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="week-block">
+            <h3>Week 3: The Kitchen (NVZ) & Basic Volleys</h3>
+            <div class="skills-grid">
+                <div class="skill-item">Non-volley zone rules (momentum rule)</div>
+                <div class="skill-item">Forehand volley at the kitchen line</div>
+                <div class="skill-item">Backhand volley at the kitchen line</div>
+                <div class="skill-item">Punch volley vs. swing volley</div>
+                <div class="skill-item">Proper net positioning (2 feet behind NVZ line)</div>
+                <div class="skill-item">Basic doubles positioning</div>
+            </div>
+            <div class="drill-box">
+                <h4>Drills</h4>
+                <ul>
+                    <li>Kitchen line volley-volley with partner: 30 consecutive</li>
+                    <li>"Skinny singles" in one half of the court</li>
+                    <li>Feed and volley: partner feeds, you volley to targets</li>
+                </ul>
+            </div>
+            <div class="resources-section">
+                <h4>Watch These Tutorials:</h4>
+                <div class="resource-links">
+                    <a href="https://www.youtube.com/results?search_query=pickleball+kitchen+rules+NVZ+short" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Kitchen Rules</a>
+                    <a href="https://www.youtube.com/results?search_query=pickleball+volley+technique+beginner" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Volley Technique</a>
+                    <a href="https://www.youtube.com/results?search_query=pickleball+doubles+positioning+beginner" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Doubles Positioning</a>
+                    <a href="https://www.instagram.com/explore/tags/pickleballdrills/" target="_blank" class="resource-link instagram"><span class="icon">&#128247;</span> #PickleballDrills</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="milestone-box">
+            <h4>Phase 1 Milestone Checklist</h4>
+            <ul>
+                <li>Can rally 10+ shots consistently with a partner</li>
+                <li>Serve lands in the correct service box 7/10 times</li>
+                <li>Understand and follow all basic rules without prompting</li>
+                <li>Comfortable at the kitchen line for simple volleys</li>
+                <li>Can keep score correctly in doubles</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- PHASE 2 -->
+    <div class="phase" id="phase2">
+        <div class="phase-header">
+            <div class="phase-number">2</div>
+            <div>
+                <div class="phase-title">Building Consistency</div>
+                <div class="phase-subtitle">Rating Goal: 2.0 &rarr; 2.5</div>
+            </div>
+            <div class="phase-duration">Weeks 4-7</div>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress-fill" style="width: 35%; background: var(--level-beginner);"></div>
+        </div>
+
+        <div class="week-block">
+            <h3>Weeks 4-5: Dinking Fundamentals</h3>
+            <div class="skills-grid">
+                <div class="skill-item">Forehand dink (soft, controlled, over the net)</div>
+                <div class="skill-item">Backhand dink</div>
+                <div class="skill-item">Cross-court dinking patterns</div>
+                <div class="skill-item">Dink footwork (small adjustment steps)</div>
+                <div class="skill-item">Paddle face angle control</div>
+                <div class="skill-item">Patience: not attacking every ball</div>
+            </div>
+            <div class="drill-box">
+                <h4>Drills</h4>
+                <ul>
+                    <li>Cooperative dink rallies: 20+ consecutive cross-court</li>
+                    <li>Figure-8 dinking: alternate forehand cross, backhand cross</li>
+                    <li>Target dinking: place targets in NVZ corners, aim for them</li>
+                    <li>Solo wall dink practice: soft touch 6 feet from wall</li>
+                </ul>
+            </div>
+            <div class="resources-section">
+                <h4>Watch These Tutorials:</h4>
+                <div class="resource-links">
+                    <a href="https://www.youtube.com/results?search_query=pickleball+dink+technique+tutorial" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Dinking Basics</a>
+                    <a href="https://www.youtube.com/results?search_query=pickleball+cross+court+dink+drill" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Cross-Court Dink</a>
+                    <a href="https://www.youtube.com/results?search_query=selkirk+tv+dink+tips" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Selkirk: Dink Tips</a>
+                    <a href="https://www.instagram.com/explore/tags/pickleballdink/" target="_blank" class="resource-link instagram"><span class="icon">&#128247;</span> #PickleballDink</a>
+                </div>
+            </div>
+
+            <div class="tip-callout">
+                <strong>Pro Tip:</strong> The dink is the most important shot in pickleball. It neutralizes power players and creates opportunities. Spend 50% of your practice time here.
+            </div>
+        </div>
+
+        <div class="week-block">
+            <h3>Weeks 6-7: Groundstrokes & Transition</h3>
+            <div class="skills-grid">
+                <div class="skill-item">Forehand groundstroke with topspin</div>
+                <div class="skill-item">Backhand groundstroke (one or two-handed)</div>
+                <div class="skill-item">Depth control on groundstrokes</div>
+                <div class="skill-item">The split step before every shot</div>
+                <div class="skill-item">Transitioning from baseline to kitchen line</div>
+                <div class="skill-item">Identifying when to stay back vs. move up</div>
+            </div>
+            <div class="drill-box">
+                <h4>Drills</h4>
+                <ul>
+                    <li>Groundstroke depth: hit past the service line consistently</li>
+                    <li>Transition drill: return serve, hit 3rd shot, move to NVZ</li>
+                    <li>3-shot rally: serve, return, groundstroke &mdash; focus on deep placement</li>
+                    <li>Split step timing: partner feeds random, you split-step then react</li>
+                </ul>
+            </div>
+            <div class="resources-section">
+                <h4>Watch These Tutorials:</h4>
+                <div class="resource-links">
+                    <a href="https://www.youtube.com/results?search_query=pickleball+groundstroke+technique" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Groundstrokes</a>
+                    <a href="https://www.youtube.com/results?search_query=pickleball+split+step+tutorial" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Split Step</a>
+                    <a href="https://www.youtube.com/results?search_query=pickleball+transition+zone+tips" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Transition Zone</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="weekly-schedule">
+            <h4>Suggested Weekly Schedule (Phase 2)</h4>
+            <div class="schedule-grid">
+                <div class="schedule-day"><strong>Mon</strong>Dink practice 30min</div>
+                <div class="schedule-day"><strong>Tue</strong>Open play 60min</div>
+                <div class="schedule-day"><strong>Wed</strong>Rest / Watch videos</div>
+                <div class="schedule-day"><strong>Thu</strong>Drills 45min</div>
+                <div class="schedule-day"><strong>Fri</strong>Open play 60min</div>
+                <div class="schedule-day"><strong>Sat</strong>Focused play 90min</div>
+                <div class="schedule-day"><strong>Sun</strong>Active recovery</div>
+            </div>
+        </div>
+
+        <div class="milestone-box">
+            <h4>Phase 2 Milestone Checklist</h4>
+            <ul>
+                <li>Can sustain 10+ shot dink rallies cross-court</li>
+                <li>Groundstrokes land deep (past service line) 6/10 times</li>
+                <li>Consistently use split step before receiving</li>
+                <li>Understand when to move to the kitchen line</li>
+                <li>Unforced errors decreasing noticeably</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- PHASE 3 -->
+    <div class="phase" id="phase3">
+        <div class="phase-header">
+            <div class="phase-number">3</div>
+            <div>
+                <div class="phase-title">Strategic Play</div>
+                <div class="phase-subtitle">Rating Goal: 2.5 &rarr; 3.0</div>
+            </div>
+            <div class="phase-duration">Weeks 8-12</div>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress-fill" style="width: 50%; background: var(--level-intermediate);"></div>
+        </div>
+
+        <div class="week-block">
+            <h3>Weeks 8-9: The Third Shot (Drop & Drive)</h3>
+            <div class="skills-grid">
+                <div class="skill-item">Third shot drop concept and execution</div>
+                <div class="skill-item">Third shot drive (when opponents are back)</div>
+                <div class="skill-item">Decision making: drop vs. drive</div>
+                <div class="skill-item">Drop shot arc and trajectory</div>
+                <div class="skill-item">Follow your drop to the net</div>
+                <div class="skill-item">Resetting when the drop pops up</div>
+            </div>
+            <div class="drill-box">
+                <h4>Drills</h4>
+                <ul>
+                    <li>Drop shot from baseline: land in opponent's NVZ 5/10 times</li>
+                    <li>Drop and transition: drop, then move forward, hit volley</li>
+                    <li>Partner feeds deep, you choose drop or drive based on their position</li>
+                    <li>Dead dink drill: hit drops that don't bounce above net height</li>
+                </ul>
+            </div>
+            <div class="resources-section">
+                <h4>Watch These Tutorials:</h4>
+                <div class="resource-links">
+                    <a href="https://www.youtube.com/results?search_query=pickleball+third+shot+drop+tutorial" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> 3rd Shot Drop</a>
+                    <a href="https://www.youtube.com/results?search_query=pickleball+third+shot+drive+when+to+use" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Drop vs. Drive</a>
+                    <a href="https://www.youtube.com/results?search_query=briones+pickleball+third+shot" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Briones: 3rd Shot</a>
+                    <a href="https://www.instagram.com/explore/tags/thirdshot/" target="_blank" class="resource-link instagram"><span class="icon">&#128247;</span> #ThirdShot</a>
+                </div>
+            </div>
+
+            <div class="tip-callout">
+                <strong>Key Concept:</strong> The 3rd shot drop is what separates 2.5 from 3.0+ players. It's the tool that gets the serving team to the net. Practice it daily even if it's frustrating at first.
+            </div>
+        </div>
+
+        <div class="week-block">
+            <h3>Weeks 10-11: Court Positioning & Communication</h3>
+            <div class="skills-grid">
+                <div class="skill-item">Stacking in doubles (when and why)</div>
+                <div class="skill-item">Moving as a unit with your partner</div>
+                <div class="skill-item">Covering the middle (forehand takes)</div>
+                <div class="skill-item">Calling "mine," "yours," "out," "bounce"</div>
+                <div class="skill-item">Recognizing opponent patterns</div>
+                <div class="skill-item">Playing to opponent weaknesses</div>
+            </div>
+            <div class="drill-box">
+                <h4>Drills</h4>
+                <ul>
+                    <li>Shadow positioning: practice moving laterally with partner (no ball)</li>
+                    <li>Middle ball drill: feeds down the middle, practice communication</li>
+                    <li>2-on-1 drill: two at kitchen vs. one at baseline practicing placement</li>
+                    <li>Point play with focus: call every single ball verbally</li>
+                </ul>
+            </div>
+            <div class="resources-section">
+                <h4>Watch These Tutorials:</h4>
+                <div class="resource-links">
+                    <a href="https://www.youtube.com/results?search_query=pickleball+stacking+doubles+explained" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Stacking Explained</a>
+                    <a href="https://www.youtube.com/results?search_query=pickleball+doubles+communication+tips" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Partner Communication</a>
+                    <a href="https://www.youtube.com/results?search_query=pickleball+positioning+strategy+doubles" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Positioning Strategy</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="week-block">
+            <h3>Week 12: Serve Variety & Return Strategy</h3>
+            <div class="skills-grid">
+                <div class="skill-item">Power serve (with depth)</div>
+                <div class="skill-item">Lob serve (high arc, deep)</div>
+                <div class="skill-item">Spin serve (topspin/sidespin)</div>
+                <div class="skill-item">Targeting the T, body, or backhand</div>
+                <div class="skill-item">Deep return + immediate advance to NVZ</div>
+                <div class="skill-item">Return placement variety</div>
+            </div>
+            <div class="drill-box">
+                <h4>Drills</h4>
+                <ul>
+                    <li>Serve variety: alternate 3 serve types, each to different zones</li>
+                    <li>Return and rush: return deep, sprint to NVZ, split step</li>
+                    <li>Serve + 3rd shot combo: serve, let return bounce, execute drop/drive</li>
+                </ul>
+            </div>
+            <div class="resources-section">
+                <h4>Watch These Tutorials:</h4>
+                <div class="resource-links">
+                    <a href="https://www.youtube.com/results?search_query=pickleball+spin+serve+tutorial+2024" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Spin Serve</a>
+                    <a href="https://www.youtube.com/results?search_query=pickleball+deep+return+strategy" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Return Strategy</a>
+                    <a href="https://www.youtube.com/results?search_query=zane+navratil+serve" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Zane: Serve Tips</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="milestone-box">
+            <h4>Phase 3 Milestone Checklist</h4>
+            <ul>
+                <li>Third shot drop lands in NVZ 4/10 times from baseline</li>
+                <li>Can stack effectively in doubles</li>
+                <li>Communicate consistently with partner during points</li>
+                <li>Serve with intention (placement + some variety)</li>
+                <li>Win points through strategy, not just power</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- PHASE 4 -->
+    <div class="phase" id="phase4">
+        <div class="phase-header">
+            <div class="phase-number">4</div>
+            <div>
+                <div class="phase-title">Advanced Fundamentals</div>
+                <div class="phase-subtitle">Rating Goal: 3.0 &rarr; 3.5</div>
+            </div>
+            <div class="phase-duration">Weeks 13-18</div>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress-fill" style="width: 70%; background: var(--level-intermediate);"></div>
+        </div>
+
+        <div class="week-block">
+            <h3>Weeks 13-14: Advanced Dinking & Resets</h3>
+            <div class="skills-grid">
+                <div class="skill-item">Dink with purpose: moving opponents laterally</div>
+                <div class="skill-item">Cross-court vs. line dinks (when to use each)</div>
+                <div class="skill-item">Attacking a high dink (speed-up)</div>
+                <div class="skill-item">Recognizing attackable balls</div>
+                <div class="skill-item">The reset shot (absorbing pace, resetting to NVZ)</div>
+                <div class="skill-item">Blocking hard drives from chest height</div>
+            </div>
+            <div class="drill-box">
+                <h4>Drills</h4>
+                <ul>
+                    <li>Dink-to-attack: dink rally until someone gets an attackable ball, speed up</li>
+                    <li>Reset drill: partner drives hard, you reset softly into NVZ</li>
+                    <li>2-touch reset: absorb with paddle face open, redirect down</li>
+                    <li>Random feed: partner alternates hard/soft, you choose appropriate response</li>
+                </ul>
+            </div>
+            <div class="resources-section">
+                <h4>Watch These Tutorials:</h4>
+                <div class="resource-links">
+                    <a href="https://www.youtube.com/results?search_query=pickleball+reset+shot+technique" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Reset Shot</a>
+                    <a href="https://www.youtube.com/results?search_query=pickleball+when+to+speed+up+dink" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> When to Speed Up</a>
+                    <a href="https://www.youtube.com/results?search_query=pickleball+advanced+dinking+strategy" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Advanced Dinking</a>
+                    <a href="https://www.instagram.com/explore/tags/pickleballstrategy/" target="_blank" class="resource-link instagram"><span class="icon">&#128247;</span> #PickleballStrategy</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="week-block">
+            <h3>Weeks 15-16: Lobs, Overheads & Erne</h3>
+            <div class="skills-grid">
+                <div class="skill-item">Offensive lob (over opponent's backhand)</div>
+                <div class="skill-item">Defensive lob (to buy recovery time)</div>
+                <div class="skill-item">Overhead smash technique</div>
+                <div class="skill-item">Recognizing lob opportunities</div>
+                <div class="skill-item">The Erne (jump/run around NVZ)</div>
+                <div class="skill-item">Defending against the Erne</div>
+            </div>
+            <div class="drill-box">
+                <h4>Drills</h4>
+                <ul>
+                    <li>Lob target practice: lob over partner at NVZ, land within 3 feet of baseline</li>
+                    <li>Overhead drill: partner lobs, you put away with controlled overhead</li>
+                    <li>Erne practice: dink rally, look for opportunity to Erne (practice footwork first without ball)</li>
+                    <li>Defend the lob: partner lobs, you turn and run, hit reset or counter-lob</li>
+                </ul>
+            </div>
+            <div class="resources-section">
+                <h4>Watch These Tutorials:</h4>
+                <div class="resource-links">
+                    <a href="https://www.youtube.com/results?search_query=pickleball+lob+shot+when+how" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Lob Shot Guide</a>
+                    <a href="https://www.youtube.com/results?search_query=pickleball+overhead+smash+technique" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Overhead Smash</a>
+                    <a href="https://www.youtube.com/results?search_query=pickleball+erne+shot+tutorial" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> The Erne</a>
+                    <a href="https://www.youtube.com/results?search_query=tyson+mcguffin+erne" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> McGuffin: Erne</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="week-block">
+            <h3>Weeks 17-18: Pattern Play & Point Construction</h3>
+            <div class="skills-grid">
+                <div class="skill-item">Playing patterns: serve wide &rarr; drop middle</div>
+                <div class="skill-item">Constructing points (setting up the winner)</div>
+                <div class="skill-item">Reading opponents' body language and paddle position</div>
+                <div class="skill-item">Changing pace mid-rally</div>
+                <div class="skill-item">Using timeouts and momentum strategically</div>
+                <div class="skill-item">Playing to your partner's strengths</div>
+            </div>
+            <div class="drill-box">
+                <h4>Drills</h4>
+                <ul>
+                    <li>Pattern play: practice specific 3-4 shot sequences repeatedly</li>
+                    <li>Game simulation: play to 11 with specific constraints (e.g., must dink 3 times before attacking)</li>
+                    <li>Video analysis: record your games, review positioning and decision-making</li>
+                    <li>Play "king of the court" format for competitive pressure</li>
+                </ul>
+            </div>
+            <div class="resources-section">
+                <h4>Watch These Tutorials:</h4>
+                <div class="resource-links">
+                    <a href="https://www.youtube.com/results?search_query=pickleball+point+construction+strategy" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Point Construction</a>
+                    <a href="https://www.youtube.com/results?search_query=pickleball+pattern+play+3.5" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Pattern Play</a>
+                    <a href="https://www.youtube.com/results?search_query=pickleball+reading+opponents" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Reading Opponents</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="weekly-schedule">
+            <h4>Suggested Weekly Schedule (Phase 4)</h4>
+            <div class="schedule-grid">
+                <div class="schedule-day"><strong>Mon</strong>Drilling 60min</div>
+                <div class="schedule-day"><strong>Tue</strong>Competitive play 90min</div>
+                <div class="schedule-day"><strong>Wed</strong>Video study + rest</div>
+                <div class="schedule-day"><strong>Thu</strong>Drilling 60min</div>
+                <div class="schedule-day"><strong>Fri</strong>Open play 60min</div>
+                <div class="schedule-day"><strong>Sat</strong>Tournament or league play</div>
+                <div class="schedule-day"><strong>Sun</strong>Light play or rest</div>
+            </div>
+        </div>
+
+        <div class="milestone-box">
+            <h4>Phase 4 Milestone Checklist</h4>
+            <ul>
+                <li>Can sustain 20+ shot dink rallies with purpose (moving opponents)</li>
+                <li>Reset shot works 6/10 times against hard drives</li>
+                <li>Third shot drop is reliable (6/10 from baseline)</li>
+                <li>Can execute lobs and overheads with intention</li>
+                <li>Starting to construct points rather than just reacting</li>
+                <li>Winning most games against 3.0 players</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- PHASE 5 -->
+    <div class="phase" id="phase5">
+        <div class="phase-header">
+            <div class="phase-number">5</div>
+            <div>
+                <div class="phase-title">Competitive Play &mdash; Reaching 4.0</div>
+                <div class="phase-subtitle">Rating Goal: 3.5 &rarr; 4.0</div>
+            </div>
+            <div class="phase-duration">Weeks 19-26</div>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress-fill" style="width: 100%; background: var(--level-advanced);"></div>
+        </div>
+
+        <div class="week-block">
+            <h3>Weeks 19-21: Pace Control & Shot Selection Mastery</h3>
+            <div class="skills-grid">
+                <div class="skill-item">Controlling pace: speed up and slow down at will</div>
+                <div class="skill-item">Counter-attacking (blocking speed-ups back with purpose)</div>
+                <div class="skill-item">Two-handed backhand options</div>
+                <div class="skill-item">Inside-out forehand from middle</div>
+                <div class="skill-item">Approach shots (between drop and drive)</div>
+                <div class="skill-item">Disguising shots (same motion, different outcomes)</div>
+            </div>
+            <div class="drill-box">
+                <h4>Drills</h4>
+                <ul>
+                    <li>Speed-up/counter drill: dink rally &rarr; one player speeds up &rarr; other blocks/counters</li>
+                    <li>"Firefight" drill: rapid exchanges at NVZ, focus on control not power</li>
+                    <li>Shot selection game: coach/partner calls situation, you choose and execute</li>
+                    <li>Disguise drill: practice same backswing for dink, drive, and lob</li>
+                </ul>
+            </div>
+            <div class="resources-section">
+                <h4>Watch These Tutorials:</h4>
+                <div class="resource-links">
+                    <a href="https://www.youtube.com/results?search_query=pickleball+speed+up+counter+attack" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Counter Attacks</a>
+                    <a href="https://www.youtube.com/results?search_query=pickleball+shot+disguise+deception" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Shot Disguise</a>
+                    <a href="https://www.youtube.com/results?search_query=pickleball+firefight+hands+battle" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Hands Battle Tips</a>
+                    <a href="https://www.youtube.com/results?search_query=pickleball+4.0+level+strategy" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> 4.0 Strategy</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="week-block">
+            <h3>Weeks 22-24: Advanced Strategy & Game Management</h3>
+            <div class="skills-grid">
+                <div class="skill-item">Targeting the weaker opponent consistently</div>
+                <div class="skill-item">Switching strategy mid-game based on what's working</div>
+                <div class="skill-item">Playing the wind and sun (outdoor)</div>
+                <div class="skill-item">Managing game tempo (slowing down when behind)</div>
+                <div class="skill-item">Advanced stacking and switching</div>
+                <div class="skill-item">Playing against different styles (bangers, dinkers, lobbers)</div>
+            </div>
+            <div class="drill-box">
+                <h4>Drills</h4>
+                <ul>
+                    <li>Situational play: start points at specific scores (e.g., 9-9) for pressure</li>
+                    <li>Style matchup drill: play against different archetypes intentionally</li>
+                    <li>Film study: watch pro matches and identify strategic patterns</li>
+                    <li>Tournament simulation: play best-of-3 with proper warm-up and breaks</li>
+                </ul>
+            </div>
+            <div class="resources-section">
+                <h4>Watch These Tutorials:</h4>
+                <div class="resource-links">
+                    <a href="https://www.youtube.com/results?search_query=pickleball+strategy+against+bangers" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Beat Bangers</a>
+                    <a href="https://www.youtube.com/results?search_query=pickleball+advanced+stacking+switching" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Advanced Stacking</a>
+                    <a href="https://www.youtube.com/results?search_query=pickleball+pro+game+analysis+breakdown" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Pro Game Analysis</a>
+                    <a href="https://www.instagram.com/explore/tags/pickleballpro/" target="_blank" class="resource-link instagram"><span class="icon">&#128247;</span> #PickleballPro</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="week-block">
+            <h3>Weeks 25-26: Tournament Preparation & Mental Game</h3>
+            <div class="skills-grid">
+                <div class="skill-item">Pre-match warm-up routine</div>
+                <div class="skill-item">Mental toughness: staying calm at 9-10</div>
+                <div class="skill-item">Breathing between points</div>
+                <div class="skill-item">Positive self-talk and partner encouragement</div>
+                <div class="skill-item">Post-match analysis routine</div>
+                <div class="skill-item">Physical conditioning (lateral movement, endurance)</div>
+            </div>
+            <div class="drill-box">
+                <h4>Preparation</h4>
+                <ul>
+                    <li>Register for a local 3.5 tournament on pickleballtournaments.com</li>
+                    <li>Play 3+ rated matches per week against 3.5+ players</li>
+                    <li>Establish a 10-minute pre-match warm-up sequence</li>
+                    <li>Practice mindfulness: 5 min visualization before matches</li>
+                    <li>Fitness: 2x/week lateral shuffles, split squats, wrist curls</li>
+                </ul>
+            </div>
+            <div class="resources-section">
+                <h4>Watch These Tutorials:</h4>
+                <div class="resource-links">
+                    <a href="https://www.youtube.com/results?search_query=pickleball+mental+game+tips" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Mental Game</a>
+                    <a href="https://www.youtube.com/results?search_query=pickleball+tournament+preparation+tips" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Tournament Prep</a>
+                    <a href="https://www.youtube.com/results?search_query=pickleball+fitness+conditioning+workout" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Fitness for Pickleball</a>
+                    <a href="https://www.youtube.com/results?search_query=pickleball+warm+up+routine+before+match" target="_blank" class="resource-link youtube"><span class="icon">&#9654;</span> Warm-Up Routine</a>
+                </div>
+            </div>
+
+            <div class="tip-callout">
+                <strong>The 4.0 Difference:</strong> At 4.0, you don't just <em>have</em> all the shots &mdash; you know <em>when</em> to use them. Shot selection, consistency under pressure, and minimizing unforced errors are what separate 3.5 from 4.0. Play smart, not just hard.
+            </div>
+        </div>
+
+        <div class="milestone-box">
+            <h4>Phase 5 &mdash; You're a 4.0 Player When:</h4>
+            <ul>
+                <li>Third shot drop is consistent (7/10) and you can drive with purpose</li>
+                <li>Dink rallies are weapons, not just neutral exchanges</li>
+                <li>You can counter speed-ups rather than just blocking</li>
+                <li>Unforced errors are rare (&lt;3 per game)</li>
+                <li>You construct points with 2-3 shot sequences</li>
+                <li>You adapt strategy based on opponents within a game</li>
+                <li>You compete well in 3.5+ tournaments</li>
+                <li>You're mentally composed even in close games</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Summary / Additional Resources -->
+    <div class="equipment-section">
+        <h2>Key Principles Throughout Your Journey</h2>
+        <div class="equipment-grid">
+            <div class="equipment-card">
+                <div class="emoji">&#127919;</div>
+                <h4>Consistency > Power</h4>
+                <p>The player who makes fewer errors wins at every level. Keep the ball in play.</p>
+            </div>
+            <div class="equipment-card">
+                <div class="emoji">&#9201;</div>
+                <h4>Patience Wins</h4>
+                <p>Wait for the right ball to attack. Forcing shots leads to errors.</p>
+            </div>
+            <div class="equipment-card">
+                <div class="emoji">&#129351;</div>
+                <h4>Get to the Net</h4>
+                <p>80% of points are won at the kitchen line. Your goal is always to get there.</p>
+            </div>
+            <div class="equipment-card">
+                <div class="emoji">&#128218;</div>
+                <h4>Drill > Play</h4>
+                <p>Playing is fun but drilling specific shots is how you actually improve.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="channel-directory">
+        <h2>Additional Free Resources</h2>
+        <div class="channel-list">
+            <div class="channel-card">
+                <h4>USA Pickleball Rules</h4>
+                <p>Official rulebook (free PDF)</p>
+                <a href="https://usapickleball.org/what-is-pickleball/official-rules/" target="_blank">usapickleball.org/rules</a>
+            </div>
+            <div class="channel-card">
+                <h4>Pickleheads Court Finder</h4>
+                <p>Find courts and open play near you</p>
+                <a href="https://www.pickleheads.com/" target="_blank">pickleheads.com</a>
+            </div>
+            <div class="channel-card">
+                <h4>Pickleball Tournament Finder</h4>
+                <p>Register for rated tournaments</p>
+                <a href="https://www.pickleballtournaments.com/" target="_blank">pickleballtournaments.com</a>
+            </div>
+            <div class="channel-card">
+                <h4>r/Pickleball</h4>
+                <p>Community tips, gear reviews, game analysis</p>
+                <a href="https://www.reddit.com/r/Pickleball/" target="_blank">reddit.com/r/Pickleball</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <p>Pickleball Learning Program &mdash; From Beginner to 4.0</p>
+    <p style="margin-top: 0.5rem; font-size: 0.8rem;">Timeline assumes 4-5 sessions per week. Individual progress varies based on athletic background, practice quality, and access to higher-level players.</p>
+</footer>
+
+</body>
+</html>
